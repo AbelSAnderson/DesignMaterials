@@ -4,40 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/nav_home">
-
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.designmaterials.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:name="com.example.designmaterials.HomeFragment"
+        android:label="Home"
         tools:layout="@layout/fragment_home" />
-
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.designmaterials.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
+        android:id="@+id/nav_design"
+        android:name="com.example.designmaterials.DesignFragment"
+        android:label="Desgin"
+        tools:layout="@layout/fragment_design" />
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.designmaterials.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
-
+        android:id="@+id/nav_elements"
+        android:name="com.example.designmaterials.ElementsFragment"
+        android:label="Elements"
+        tools:layout="@layout/fragment_elements" />
     <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.example.designmaterials.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
-
+        android:id="@+id/nav_views"
+        android:name="com.example.designmaterials.ViewsFragment"
+        android:label="View"
+        tools:layout="@layout/fragment_views" />
     <fragment
-        android:id="@+id/nav_share"
-        android:name="com.example.designmaterials.ui.share.ShareFragment"
-        android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" />
-
-    <fragment
-        android:id="@+id/nav_send"
-        android:name="com.example.designmaterials.ui.send.SendFragment"
-        android:label="@string/menu_send"
-        tools:layout="@layout/fragment_send" />
+        android:id="@+id/nav_icons"
+        android:name="com.example.designmaterials.IconsFragment"
+        android:label="Icons"
+        tools:layout="@layout/fragment_icons" />
 </navigation>
