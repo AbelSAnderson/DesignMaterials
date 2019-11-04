@@ -14,7 +14,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import yuku.ambilwarna.AmbilWarnaDialog;
+import com.skydoves.colorpickerview.ColorPickerView;
+import com.skydoves.colorpickerview.listeners.ColorListener;
 
 
 /**
@@ -43,40 +44,26 @@ public class DesignFragment extends Fragment {
         colorPickBtn=view.findViewById(R.id.colorPickBtn);
         lightColor=view.findViewById(R.id.colValue);
 
-        colorPickBtn.setOnClickListener(new View.OnClickListener() {
+//        colorPickBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                openColorPicker();
+//            }
+//        });
+        ColorPickerView colorPickerView = view.findViewById(R.id.colorPickerView);
+
+        colorPickerView.setColorListener(new ColorListener() {
             @Override
-            public void onClick(View view) {
-                openColorPicker();
+            public void onColorSelected(int color, boolean fromUser) {
+
+                colorContainer.setBackgroundColor(color);
             }
         });
 
         return view;
     }
 
-    public void openColorPicker() {
-        AmbilWarnaDialog colorPicker=new AmbilWarnaDialog(getContext(), mDefaultColor, new AmbilWarnaDialog.OnAmbilWarnaListener() {
-            @Override
-            public void onCancel(AmbilWarnaDialog dialog) {
 
-            }
-
-            @Override
-            public void onOk(AmbilWarnaDialog dialog, int color) {
-                int red = Color.red(color);
-                int green = Color.green(color);
-                int blue = Color.blue(color);
-                int alpha = Color.alpha(color);
-                mDefaultColor=color;
-                colorContainer.setBackgroundColor(mDefaultColor);
-                String hexColor = String.format("#%06X", (0xFFFFFF & mDefaultColor));
-//                lightColor.setText(hexColor);
-                int manipulated=manipulateColor(color,30);
-                lightColor.setText(manipulated+"");
-//                lightColor.setText(" red:"+red+"\n green:"+green+"\n blue:"+blue+"\n alpha:"+alpha);
-            }
-        });
-        colorPicker.show();
-    }
 
 //    public void ColorLuminance(String hex, String lum) {
 //          String hexColor = String.format("#%06X", (0xFFFFFF & mDefaultColor));
