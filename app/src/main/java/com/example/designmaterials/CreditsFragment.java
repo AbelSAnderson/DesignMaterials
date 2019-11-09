@@ -35,7 +35,40 @@ public class CreditsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_credits, container, false);
+
+        ArrayList<Attribution> attributions = new ArrayList<>();
+
+        attributions.add(new Attribution("Designer", "Ndicirm Strazimiri", "''"));
+        attributions.add(new Attribution("Idea Man", "Abel Anderson", "''"));
+
+
+
+        ((ListView) view.findViewById(R.id.creditListView)).setAdapter(new creditListViewAdapter(getContext(), attributions));
+
         return view;
+    }
+
+    public class creditListViewAdapter extends ArrayAdapter<Attribution> {
+
+        public creditListViewAdapter(@NonNull Context context, ArrayList<Attribution> resource) {
+            super(context, 0, resource);
+        }
+
+        @NonNull
+        @Override
+        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+            Attribution item = getItem(position);
+
+            if(convertView == null) {
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.listview_credit, parent, false);
+            }
+
+            ((TextView) convertView.findViewById(R.id.creditTitle)).setText(item.getTitle());
+            ((TextView) convertView.findViewById(R.id.creditName)).setText(item.getName());
+            ((TextView) convertView.findViewById(R.id.creditDescription)).setText(item.getDescription());
+
+            return convertView;
+        }
     }
 
 }
