@@ -6,32 +6,32 @@
     app:startDestination="@+id/nav_home">
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.designmaterials.HomeFragment"
+        android:name="com.example.designmaterials.fragments.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/nav_design"
-        android:name="com.example.designmaterials.DesignFragment"
+        android:name="com.example.designmaterials.fragments.DesignFragment"
         android:label="Desgin"
         tools:layout="@layout/fragment_design" />
     <fragment
         android:id="@+id/nav_elements"
-        android:name="com.example.designmaterials.ElementsFragment"
+        android:name="com.example.designmaterials.fragments.ElementsFragment"
         android:label="Elements"
         tools:layout="@layout/fragment_elements" />
     <fragment
         android:id="@+id/nav_views"
-        android:name="com.example.designmaterials.ViewsFragment"
+        android:name="com.example.designmaterials.fragments.ViewsFragment"
         android:label="View"
         tools:layout="@layout/fragment_views" />
     <fragment
         android:id="@+id/nav_icons"
-        android:name="com.example.designmaterials.IconsFragment"
+        android:name="com.example.designmaterials.fragments.IconsFragment"
         android:label="Icons"
         tools:layout="@layout/fragment_icons" />
     <fragment
         android:id="@+id/nav_credits"
-        android:name="com.example.designmaterials.CreditsFragment"
+        android:name="com.example.designmaterials.fragments.CreditsFragment"
         android:label="Credits"
         tools:layout="@layout/fragment_credits" />
 </navigation>
