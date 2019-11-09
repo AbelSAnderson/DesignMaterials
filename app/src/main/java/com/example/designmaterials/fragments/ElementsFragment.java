@@ -1,4 +1,4 @@
-package com.example.designmaterials;
+package com.example.designmaterials.fragments;
 
 
 import android.os.Bundle;
@@ -9,14 +9,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.designmaterials.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ViewsFragment extends Fragment {
+public class ElementsFragment extends Fragment {
 
 
-    public ViewsFragment() {
+    public ElementsFragment() {
         // Required empty public constructor
     }
 
@@ -25,7 +27,7 @@ public class ViewsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_views, container, false);
+        return inflater.inflate(R.layout.fragment_elements, container, false);
     }
 
 }
