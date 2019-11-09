@@ -1,4 +1,4 @@
-package com.example.designmaterials;
+package com.example.designmaterials.javabeans;
 
 public class Attribution {
 

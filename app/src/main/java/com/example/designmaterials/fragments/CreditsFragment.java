@@ -1,4 +1,4 @@
-package com.example.designmaterials;
+package com.example.designmaterials.fragments;
 
 
 import android.content.Context;
@@ -15,7 +15,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import org.w3c.dom.Attr;
+import com.example.designmaterials.javabeans.Attribution;
+import com.example.designmaterials.R;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.example.designmaterials;
+package com.example.designmaterials.fragments;
 
 
 import android.graphics.Color;
@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.designmaterials.R;
 
 import yuku.ambilwarna.AmbilWarnaDialog;
 
