@@ -13,6 +13,7 @@
     <string name="menu_elements">Elements</string>
     <string name="menu_icons">Icons</string>
     <string name="menu_tools">Tools</string>
+    <string name="menu_credits">Credits</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
