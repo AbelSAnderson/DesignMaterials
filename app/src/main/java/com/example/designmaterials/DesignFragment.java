@@ -25,8 +25,11 @@ public class DesignFragment extends Fragment {
 
     LinearLayout colorContainer;
     int mDefaultColor;
-    Button colorPickBtn;
-    TextView lightColor;
+    Button primaryColor;
+    Button lightColor;
+    Button darkColor;
+    Button primaryColorBtn;
+    Button secondaryColorBtn;
 
     public DesignFragment() {
         // Required empty public constructor
@@ -41,22 +44,45 @@ public class DesignFragment extends Fragment {
 
         colorContainer = (LinearLayout)view.findViewById(R.id.colorContainer);
         mDefaultColor = ContextCompat.getColor(getContext(),R.color.colorPrimary);
-        colorPickBtn=view.findViewById(R.id.colorPickBtn);
-        lightColor=view.findViewById(R.id.colValue);
+        primaryColor=view.findViewById(R.id.primaryColor);
+        lightColor=view.findViewById(R.id.lightColor);
+        primaryColorBtn=view.findViewById(R.id.primaryColorBtn);
+        darkColor=view.findViewById(R.id.darkColor);
+        secondaryColorBtn=view.findViewById(R.id.secondaryColorBtn);
 
-//        colorPickBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                openColorPicker();
-//            }
-//        });
+
         ColorPickerView colorPickerView = view.findViewById(R.id.colorPickerView);
 
         colorPickerView.setColorListener(new ColorListener() {
             @Override
             public void onColorSelected(int color, boolean fromUser) {
 
-                colorContainer.setBackgroundColor(color);
+//                colorContainer.setBackgroundColor(color);
+                primaryColor.setBackgroundColor(color);
+                primaryColor.setTextColor(Color.WHITE);
+
+                float[] hsv=new float[3];
+                Color.colorToHSV(color,hsv);
+                hsv[2] *= 0.8f;
+
+                int tempDarkColor=Color.HSVToColor(hsv);
+                darkColor.setBackgroundColor(tempDarkColor);
+                darkColor.setTextColor(Color.WHITE);
+
+                lightColor.setBackgroundColor(lighter(color,0.2f));
+                lightColor.setTextColor(Color.WHITE);
+            }
+        });
+        primaryColorBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                primaryColor.setText("Primary");
+            }
+        });
+        secondaryColorBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                primaryColor.setText("Secondary");
             }
         });
 
@@ -92,6 +118,14 @@ public class DesignFragment extends Fragment {
                 Math.min(r,255),
                 Math.min(g,255),
                 Math.min(b,255));
+    }
+
+    public static int lighter(int color, float factor){
+        int red=(int) ((Color.red(color)*(1-factor)/255+factor)*255);
+        int green=(int) ((Color.green(color)*(1-factor)/255+factor)*255);
+        int blue=(int) ((Color.blue(color)*(1-factor)/255+factor)*255);
+
+        return Color.argb(Color.alpha(color),red,green,blue);
     }
 
 }
