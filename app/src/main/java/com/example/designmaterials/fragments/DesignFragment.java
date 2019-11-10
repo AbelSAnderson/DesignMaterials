@@ -1,5 +1,7 @@
 package com.example.designmaterials.fragments;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
@@ -7,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 import com.example.designmaterials.R;
@@ -33,6 +36,7 @@ public class DesignFragment extends Fragment {
     static int theSecondaryColorLight=lighter(theSecondaryColor,0.2f);
     static int theSecondaryColorDark=darker(theSecondaryColor,0.8f);
     static String activeBtn="primary";
+    Button saveColorsBtn;
 
     public DesignFragment() {
         // Required empty public constructor
@@ -60,7 +64,7 @@ public class DesignFragment extends Fragment {
         secondaryColorBtn=view.findViewById(R.id.secondaryColorBtn);
         secondaryColorBtn.setBackgroundColor(theSecondaryColor);
         secondaryColorBtn.setTextColor(Color.WHITE);
-
+        saveColorsBtn=view.findViewById(R.id.saveColorsBtn);
 
         ColorPickerView colorPickerView = view.findViewById(R.id.colorPickerView);
         colorPickerView.setPureColor(Color.RED);
@@ -118,6 +122,24 @@ public class DesignFragment extends Fragment {
                 darkColor.setBackgroundColor(theSecondaryColorDark);
                 lightColor.setBackgroundColor(theSecondaryColorLight);
                 activeBtn="secondary";
+            }
+        });
+
+        saveColorsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor=sharedPreferences.edit();
+                editor.putInt("primaryColor",thePrimaryColor);
+                editor.putInt("primaryColorDark",thePrimaryColorDark);
+                editor.putInt("primaryColorLight",thePrimaryColorLight);
+                editor.putInt("secondaryColor",theSecondaryColor);
+                editor.putInt("secondaryColorDark",theSecondaryColorDark);
+                editor.putInt("secondaryColorLight",theSecondaryColorLight);
+                editor.commit();
+
+                Toast toast=Toast.makeText(getContext(),"Color Saved. Check the home Page",Toast.LENGTH_LONG);
+                toast.show();
             }
         });
 

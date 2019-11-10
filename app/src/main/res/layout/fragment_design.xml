@@ -80,6 +80,14 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"/>
     </LinearLayout>
-
+    <Button
+        android:layout_marginTop="50px"
+        android:layout_gravity="center"
+        android:id="@+id/saveColorsBtn"
+        android:background="#903"
+        android:textColor="#fff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"/>
 
 </LinearLayout>
