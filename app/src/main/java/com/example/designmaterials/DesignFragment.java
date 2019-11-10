@@ -23,8 +23,6 @@ import com.skydoves.colorpickerview.listeners.ColorListener;
  */
 public class DesignFragment extends Fragment {
 
-    LinearLayout colorContainer;
-    int mDefaultColor;
     Button primaryColor;
     Button lightColor;
     Button darkColor;
@@ -42,8 +40,6 @@ public class DesignFragment extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_design, container, false);
 
-        colorContainer = (LinearLayout)view.findViewById(R.id.colorContainer);
-        mDefaultColor = ContextCompat.getColor(getContext(),R.color.colorPrimary);
         primaryColor=view.findViewById(R.id.primaryColor);
         lightColor=view.findViewById(R.id.lightColor);
         primaryColorBtn=view.findViewById(R.id.primaryColorBtn);
@@ -57,7 +53,6 @@ public class DesignFragment extends Fragment {
             @Override
             public void onColorSelected(int color, boolean fromUser) {
 
-//                colorContainer.setBackgroundColor(color);
                 primaryColor.setBackgroundColor(color);
                 primaryColor.setTextColor(Color.WHITE);
 
@@ -91,34 +86,7 @@ public class DesignFragment extends Fragment {
 
 
 
-//    public void ColorLuminance(String hex, String lum) {
-//          String hexColor = String.format("#%06X", (0xFFFFFF & mDefaultColor));
-//        // validate hex string
-//    hexColor = String(hexColor).replace( /[^0 - 9 a - f]/gi, '');
-//        if (hex.hexColor < 6) {
-//            hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
-//        }
-//        lum = lum || 0;
-//
-//        // convert to decimal and change luminosity
-//        var rgb = "#", c, i;
-//        for (i = 0; i < 3; i++) {
-//            c = parseInt(hex.substr(i * 2, 2), 16);
-//            c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
-//            rgb += ("00" + c).substr(c.length);
-//        }
-//    }
 
-    public static int manipulateColor(int color, float factor) {
-        int a = Color.alpha(color);
-        int r = Math.round(Color.red(color) * factor);
-        int g = Math.round(Color.green(color) * factor);
-        int b = Math.round(Color.blue(color) * factor);
-        return Color.argb(a,
-                Math.min(r,255),
-                Math.min(g,255),
-                Math.min(b,255));
-    }
 
     public static int lighter(int color, float factor){
         int red=(int) ((Color.red(color)*(1-factor)/255+factor)*255);

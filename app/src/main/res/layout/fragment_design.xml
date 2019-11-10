@@ -75,7 +75,7 @@
         <Button
             android:id="@+id/secondaryColorBtn"
             android:layout_width="wrap_content"
-            android:text="Primary"
+            android:text="Secondary"
             android:layout_weight="1"
             android:layout_height="wrap_content"/>
     </LinearLayout>
