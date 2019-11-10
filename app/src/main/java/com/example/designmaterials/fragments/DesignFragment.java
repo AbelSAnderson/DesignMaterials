@@ -1,22 +1,18 @@
 package com.example.designmaterials.fragments;
 
-
 import android.graphics.Color;
 import android.os.Bundle;
-
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+
 
 import com.example.designmaterials.R;
 
-import yuku.ambilwarna.AmbilWarnaDialog;
+import com.skydoves.colorpickerview.ColorPickerView;
+import com.skydoves.colorpickerview.listeners.ColorListener;
 
 
 /**
@@ -24,10 +20,19 @@ import yuku.ambilwarna.AmbilWarnaDialog;
  */
 public class DesignFragment extends Fragment {
 
-    LinearLayout colorContainer;
-    int mDefaultColor;
-    Button colorPickBtn;
-    TextView lightColor;
+    static Button primaryColorDisplayer;
+    Button lightColor;
+    Button darkColor;
+    static Button primaryColorBtn;
+    static Button secondaryColorBtn;
+
+    static int thePrimaryColor=Color.rgb(198,40,40);
+    static int thePrimaryColorLight=lighter(thePrimaryColor,0.2f);
+    static int thePrimaryColorDark=darker(thePrimaryColor,0.8f);
+    static int theSecondaryColor=Color.rgb(27,94,32);
+    static int theSecondaryColorLight=lighter(theSecondaryColor,0.2f);
+    static int theSecondaryColorDark=darker(theSecondaryColor,0.8f);
+    static String activeBtn="primary";
 
     public DesignFragment() {
         // Required empty public constructor
@@ -40,73 +45,111 @@ public class DesignFragment extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_design, container, false);
 
-        colorContainer = (LinearLayout)view.findViewById(R.id.colorContainer);
-        mDefaultColor = ContextCompat.getColor(getContext(),R.color.colorPrimary);
-        colorPickBtn=view.findViewById(R.id.colorPickBtn);
-        lightColor=view.findViewById(R.id.colValue);
+        primaryColorDisplayer=view.findViewById(R.id.primaryColor);
+        primaryColorDisplayer.setTextColor(Color.WHITE);
+        primaryColorDisplayer.setBackgroundColor(thePrimaryColor);
+        lightColor=view.findViewById(R.id.lightColor);
+        lightColor.setTextColor(Color.WHITE);
+        lightColor.setBackgroundColor(thePrimaryColorLight);
+        primaryColorBtn=view.findViewById(R.id.primaryColorBtn);
+        primaryColorBtn.setBackgroundColor(thePrimaryColor);
+        primaryColorBtn.setTextColor(Color.WHITE);
+        darkColor=view.findViewById(R.id.darkColor);
+        darkColor.setTextColor(Color.WHITE);
+        darkColor.setBackgroundColor(thePrimaryColorDark);
+        secondaryColorBtn=view.findViewById(R.id.secondaryColorBtn);
+        secondaryColorBtn.setBackgroundColor(theSecondaryColor);
+        secondaryColorBtn.setTextColor(Color.WHITE);
 
-        colorPickBtn.setOnClickListener(new View.OnClickListener() {
+
+        ColorPickerView colorPickerView = view.findViewById(R.id.colorPickerView);
+        colorPickerView.setPureColor(Color.RED);
+
+        colorPickerView.setColorListener(new ColorListener() {
+            @Override
+            public void onColorSelected(int color, boolean fromUser) {
+
+                if(activeBtn=="primary"){
+                    //check if default color is white, if so, don't get it.
+                    if(color!=-65538){
+                        thePrimaryColor=color;
+                    }
+
+                    primaryColorDisplayer.setBackgroundColor(thePrimaryColor);
+                    primaryColorDisplayer.setText("Primary");
+
+                    primaryColorBtn.setBackgroundColor(thePrimaryColor);
+
+                    thePrimaryColorDark=darker(thePrimaryColor,0.8f);
+                    darkColor.setBackgroundColor(thePrimaryColorDark);
+
+                    thePrimaryColorLight=lighter(thePrimaryColor,0.2f);
+                    lightColor.setBackgroundColor(thePrimaryColorLight);
+
+                }else{
+                    theSecondaryColor=color;
+
+                    primaryColorDisplayer.setText("Secondary");
+                    primaryColorDisplayer.setBackgroundColor(theSecondaryColor);
+                    secondaryColorBtn.setBackgroundColor(theSecondaryColor);
+
+                    theSecondaryColorDark=darker(theSecondaryColor,0.8f);
+                    darkColor.setBackgroundColor(theSecondaryColorDark);
+                    theSecondaryColorLight=lighter(theSecondaryColor,0.2f);
+                    lightColor.setBackgroundColor(theSecondaryColorLight);
+                }
+            }
+        });
+        primaryColorBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openColorPicker();
+                primaryColorDisplayer.setText("Primary");
+                primaryColorDisplayer.setBackgroundColor(thePrimaryColor);
+                darkColor.setBackgroundColor(thePrimaryColorDark);
+                lightColor.setBackgroundColor(thePrimaryColorLight);
+                activeBtn="primary";
+            }
+        });
+        secondaryColorBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                primaryColorDisplayer.setText("Secondary");
+                primaryColorDisplayer.setBackgroundColor(theSecondaryColor);
+                darkColor.setBackgroundColor(theSecondaryColorDark);
+                lightColor.setBackgroundColor(theSecondaryColorLight);
+                activeBtn="secondary";
             }
         });
 
         return view;
     }
 
-    public void openColorPicker() {
-        AmbilWarnaDialog colorPicker=new AmbilWarnaDialog(getContext(), mDefaultColor, new AmbilWarnaDialog.OnAmbilWarnaListener() {
-            @Override
-            public void onCancel(AmbilWarnaDialog dialog) {
 
-            }
+    /**
+     * Function to get the lighter version of a color
+     * @param color
+     * @param factor
+     * @return
+     */
+    public static int lighter(int color, float factor){
+        int red=(int) ((Color.red(color)*(1-factor)/255+factor)*255);
+        int green=(int) ((Color.green(color)*(1-factor)/255+factor)*255);
+        int blue=(int) ((Color.blue(color)*(1-factor)/255+factor)*255);
 
-            @Override
-            public void onOk(AmbilWarnaDialog dialog, int color) {
-                int red = Color.red(color);
-                int green = Color.green(color);
-                int blue = Color.blue(color);
-                int alpha = Color.alpha(color);
-                mDefaultColor=color;
-                colorContainer.setBackgroundColor(mDefaultColor);
-                String hexColor = String.format("#%06X", (0xFFFFFF & mDefaultColor));
-//                lightColor.setText(hexColor);
-                int manipulated=manipulateColor(color,30);
-                lightColor.setText(manipulated+"");
-//                lightColor.setText(" red:"+red+"\n green:"+green+"\n blue:"+blue+"\n alpha:"+alpha);
-            }
-        });
-        colorPicker.show();
+        return Color.argb(Color.alpha(color),red,green,blue);
     }
 
-//    public void ColorLuminance(String hex, String lum) {
-//          String hexColor = String.format("#%06X", (0xFFFFFF & mDefaultColor));
-//        // validate hex string
-//    hexColor = String(hexColor).replace( /[^0 - 9 a - f]/gi, '');
-//        if (hex.hexColor < 6) {
-//            hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
-//        }
-//        lum = lum || 0;
-//
-//        // convert to decimal and change luminosity
-//        var rgb = "#", c, i;
-//        for (i = 0; i < 3; i++) {
-//            c = parseInt(hex.substr(i * 2, 2), 16);
-//            c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
-//            rgb += ("00" + c).substr(c.length);
-//        }
-//    }
-
-    public static int manipulateColor(int color, float factor) {
-        int a = Color.alpha(color);
-        int r = Math.round(Color.red(color) * factor);
-        int g = Math.round(Color.green(color) * factor);
-        int b = Math.round(Color.blue(color) * factor);
-        return Color.argb(a,
-                Math.min(r,255),
-                Math.min(g,255),
-                Math.min(b,255));
+    /**
+     * Function to get the darker version of a color
+     * @param color
+     * @param factor
+     * @return
+     */
+    public static int darker(int color, float factor){
+        float[] hsv=new float[3];
+        Color.colorToHSV(color,hsv);
+        hsv[2] *= factor;
+        return Color.HSVToColor(hsv);
     }
 
 }
