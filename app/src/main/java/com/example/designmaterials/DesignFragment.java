@@ -23,11 +23,19 @@ import com.skydoves.colorpickerview.listeners.ColorListener;
  */
 public class DesignFragment extends Fragment {
 
-    Button primaryColor;
+    static Button primaryColorDisplayer;
     Button lightColor;
     Button darkColor;
-    Button primaryColorBtn;
-    Button secondaryColorBtn;
+    static Button primaryColorBtn;
+    static Button secondaryColorBtn;
+
+    static int thePrimaryColor=Color.rgb(198,40,40);
+    static int thePrimaryColorLight=lighter(thePrimaryColor,0.2f);
+    static int thePrimaryColorDark=darker(thePrimaryColor,0.8f);
+    static int theSecondaryColor=Color.rgb(27,94,32);
+    static int theSecondaryColorLight=lighter(theSecondaryColor,0.2f);
+    static int theSecondaryColorDark=darker(theSecondaryColor,0.8f);
+    static String activeBtn="primary";
 
     public DesignFragment() {
         // Required empty public constructor
@@ -40,44 +48,79 @@ public class DesignFragment extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_design, container, false);
 
-        primaryColor=view.findViewById(R.id.primaryColor);
+        primaryColorDisplayer=view.findViewById(R.id.primaryColor);
+        primaryColorDisplayer.setTextColor(Color.WHITE);
+        primaryColorDisplayer.setBackgroundColor(thePrimaryColor);
         lightColor=view.findViewById(R.id.lightColor);
+        lightColor.setTextColor(Color.WHITE);
+        lightColor.setBackgroundColor(thePrimaryColorLight);
         primaryColorBtn=view.findViewById(R.id.primaryColorBtn);
+        primaryColorBtn.setBackgroundColor(thePrimaryColor);
+        primaryColorBtn.setTextColor(Color.WHITE);
         darkColor=view.findViewById(R.id.darkColor);
+        darkColor.setTextColor(Color.WHITE);
+        darkColor.setBackgroundColor(thePrimaryColorDark);
         secondaryColorBtn=view.findViewById(R.id.secondaryColorBtn);
+        secondaryColorBtn.setBackgroundColor(theSecondaryColor);
+        secondaryColorBtn.setTextColor(Color.WHITE);
 
 
         ColorPickerView colorPickerView = view.findViewById(R.id.colorPickerView);
+        colorPickerView.setPureColor(Color.RED);
 
         colorPickerView.setColorListener(new ColorListener() {
             @Override
             public void onColorSelected(int color, boolean fromUser) {
 
-                primaryColor.setBackgroundColor(color);
-                primaryColor.setTextColor(Color.WHITE);
+                if(activeBtn=="primary"){
+                    //check if default color is white, if so, don't get it.
+                    if(color!=-65538){
+                        thePrimaryColor=color;
+                    }
 
-                float[] hsv=new float[3];
-                Color.colorToHSV(color,hsv);
-                hsv[2] *= 0.8f;
+                    primaryColorDisplayer.setBackgroundColor(thePrimaryColor);
+                    primaryColorDisplayer.setText("Primary");
 
-                int tempDarkColor=Color.HSVToColor(hsv);
-                darkColor.setBackgroundColor(tempDarkColor);
-                darkColor.setTextColor(Color.WHITE);
+                    primaryColorBtn.setBackgroundColor(thePrimaryColor);
 
-                lightColor.setBackgroundColor(lighter(color,0.2f));
-                lightColor.setTextColor(Color.WHITE);
+                    thePrimaryColorDark=darker(thePrimaryColor,0.8f);
+                    darkColor.setBackgroundColor(thePrimaryColorDark);
+
+                    thePrimaryColorLight=lighter(thePrimaryColor,0.2f);
+                    lightColor.setBackgroundColor(thePrimaryColorLight);
+
+                }else{
+                    theSecondaryColor=color;
+
+                    primaryColorDisplayer.setText("Secondary");
+                    primaryColorDisplayer.setBackgroundColor(theSecondaryColor);
+                    secondaryColorBtn.setBackgroundColor(theSecondaryColor);
+
+                    theSecondaryColorDark=darker(theSecondaryColor,0.8f);
+                    darkColor.setBackgroundColor(theSecondaryColorDark);
+                    theSecondaryColorLight=lighter(theSecondaryColor,0.2f);
+                    lightColor.setBackgroundColor(theSecondaryColorLight);
+                }
             }
         });
         primaryColorBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                primaryColor.setText("Primary");
+                primaryColorDisplayer.setText("Primary");
+                primaryColorDisplayer.setBackgroundColor(thePrimaryColor);
+                darkColor.setBackgroundColor(thePrimaryColorDark);
+                lightColor.setBackgroundColor(thePrimaryColorLight);
+                activeBtn="primary";
             }
         });
         secondaryColorBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                primaryColor.setText("Secondary");
+                primaryColorDisplayer.setText("Secondary");
+                primaryColorDisplayer.setBackgroundColor(theSecondaryColor);
+                darkColor.setBackgroundColor(theSecondaryColorDark);
+                lightColor.setBackgroundColor(theSecondaryColorLight);
+                activeBtn="secondary";
             }
         });
 
@@ -85,15 +128,31 @@ public class DesignFragment extends Fragment {
     }
 
 
-
-
-
+    /**
+     * Function to get the lighter version of a color
+     * @param color
+     * @param factor
+     * @return
+     */
     public static int lighter(int color, float factor){
         int red=(int) ((Color.red(color)*(1-factor)/255+factor)*255);
         int green=(int) ((Color.green(color)*(1-factor)/255+factor)*255);
         int blue=(int) ((Color.blue(color)*(1-factor)/255+factor)*255);
 
         return Color.argb(Color.alpha(color),red,green,blue);
+    }
+
+    /**
+     * Function to get the darker version of a color
+     * @param color
+     * @param factor
+     * @return
+     */
+    public static int darker(int color, float factor){
+        float[] hsv=new float[3];
+        Color.colorToHSV(color,hsv);
+        hsv[2] *= factor;
+        return Color.HSVToColor(hsv);
     }
 
 }

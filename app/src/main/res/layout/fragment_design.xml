@@ -26,6 +26,7 @@
             app:alpha_selector="0.8"
             app:alpha_flag="0.8"
             app:palette="@drawable/palette"
+            app:default_color="@color/colorPrimary"
             app:selector="@drawable/wheel" />
         <LinearLayout
             android:layout_width="match_parent"
@@ -68,16 +69,17 @@
         android:layout_height="wrap_content">
         <Button
             android:id="@+id/primaryColorBtn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:text="Primary"
             android:layout_weight="1"
             android:layout_height="wrap_content"/>
         <Button
             android:id="@+id/secondaryColorBtn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:text="Secondary"
             android:layout_weight="1"
             android:layout_height="wrap_content"/>
     </LinearLayout>
+
 
 </LinearLayout>
