@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".fragments.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <Button
+        android:id="@+id/primaryColor"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:background="#E91E63"
+        android:text="Primary Color"
+        android:textColor="#FFFFFF"
+        android:textSize="30px" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/primaryColorLight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E91E63"
+        android:text="Primary Color Light"
+        android:textColor="#FFFFFF"
+        android:textSize="30px" />
+
+    <Button
+        android:id="@+id/primaryColorDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E91E63"
+        android:text="Primary Color Dark"
+        android:textColor="#FFFFFF"
+        android:textSize="30px" />
+
+    <Button
+        android:id="@+id/secondaryColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E91E63"
+        android:text="Primary Color"
+        android:textColor="#FFFFFF"
+        android:textSize="30px" />
+
+    <Button
+        android:id="@+id/secondaryColorLight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E91E63"
+        android:text="Primary Color Light"
+        android:textColor="#FFFFFF"
+        android:textSize="30px" />
+
+    <Button
+        android:id="@+id/secondaryColorDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E91E63"
+        android:text="Primary Color Dark"
+        android:textColor="#FFFFFF"
+        android:textSize="30px" />
+
+</LinearLayout>
