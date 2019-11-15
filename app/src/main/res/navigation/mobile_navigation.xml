@@ -41,6 +41,6 @@
     <fragment
         android:id="@+id/elementFragment"
         android:name="com.example.designmaterials.fragments.ElementFragment"
-        android:label="fragment_element"
+        android:label="Element"
         tools:layout="@layout/fragment_element" />
 </navigation>
