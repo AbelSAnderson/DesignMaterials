@@ -18,7 +18,11 @@
         android:id="@+id/nav_elements"
         android:name="com.example.designmaterials.fragments.ElementsFragment"
         android:label="Elements"
-        tools:layout="@layout/fragment_elements" />
+        tools:layout="@layout/fragment_elements" >
+        <action
+            android:id="@+id/action_nav_elements_to_elementFragment"
+            app:destination="@id/elementFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_views"
         android:name="com.example.designmaterials.fragments.ViewsFragment"
@@ -34,4 +38,9 @@
         android:name="com.example.designmaterials.fragments.CreditsFragment"
         android:label="Credits"
         tools:layout="@layout/fragment_credits" />
+    <fragment
+        android:id="@+id/elementFragment"
+        android:name="com.example.designmaterials.fragments.ElementFragment"
+        android:label="Element"
+        tools:layout="@layout/fragment_element" />
 </navigation>
