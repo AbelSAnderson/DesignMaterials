@@ -20,4 +20,8 @@ public class Element implements Serializable {
     public View getViewElement() {
         return viewElement;
     }
+
+    public String toString(){
+        return this.getViewElement().toString();
+    }
 }
