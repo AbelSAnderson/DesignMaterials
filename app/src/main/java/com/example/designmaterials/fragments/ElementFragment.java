@@ -47,15 +47,25 @@ public class ElementFragment extends Fragment {
         Element elemnt= (Element) bundle.getSerializable("Element");
 
         View vv = elemnt.getViewElement();
-//        if(vv instanceof Button){
-//            (Button)vv.setText("Click me");
-//        }
-        vv.setMinimumWidth(100);
-        vv.setMinimumHeight(100);
-        vv.setBackgroundColor(thePrimaryColor);
+
+        linearLayout.removeAllViews();
+        if(vv instanceof Button){
+            Button btn=new Button(getActivity());
+            btn.setText("Click me nice");
+            btn.setTextColor(Color.WHITE);
+            btn.setBackgroundColor(thePrimaryColor);
+            linearLayout.addView(btn);
+        }else if(vv instanceof TextView){
+            TextView txt=new TextView(getActivity());
+            txt.setText("This text is so nice");
+            txt.setTextColor(thePrimaryColor);
+            linearLayout.addView(txt);
+        }
 
 
-        linearLayout.addView(vv);
+
+
+//        linearLayout.addView(vv);
 
 
         return view;
