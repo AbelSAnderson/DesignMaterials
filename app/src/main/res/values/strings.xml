@@ -7,6 +7,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <!-- Menu Strings -->
     <string name="menu_home">Home</string>
     <string name="menu_design">Design</string>
     <string name="menu_views">View</string>
@@ -15,6 +16,13 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_credits">Credits</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+    <!-- LayoutViews Strings -->
+    <string name="layoutViewOneTitle">Sample Login Screen</string>
+    <string name="layoutViewOneEmail">Email</string>
+    <string name="layoutViewOnePassword">Password</string>
+    <string name="layoutViewOneCheckBox">Remember my Login</string>
+    <string name="layoutViewOneLogin">Login</string>
+
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
