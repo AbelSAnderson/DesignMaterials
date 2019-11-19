@@ -19,7 +19,9 @@
     <!-- LayoutViews Strings -->
     <string name="layoutViewOneTitle">Sample Login Screen</string>
     <string name="layoutViewOneEmail">Email</string>
+    <string name="layoutViewOneEmailHint">Example@email.com</string>
     <string name="layoutViewOnePassword">Password</string>
+    <string name="layoutViewOnePasswordHint">IHasGoodPass</string>
     <string name="layoutViewOneCheckBox">Remember my Login</string>
     <string name="layoutViewOneLogin">Login</string>
 
