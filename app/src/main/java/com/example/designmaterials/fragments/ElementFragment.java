@@ -8,11 +8,15 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.MultiAutoCompleteTextView;
 import android.widget.TextView;
 
 import com.example.designmaterials.R;
@@ -55,11 +59,31 @@ public class ElementFragment extends Fragment {
             btn.setTextColor(Color.WHITE);
             btn.setBackgroundColor(thePrimaryColor);
             linearLayout.addView(btn);
-        }else if(vv instanceof TextView){
-            TextView txt=new TextView(getActivity());
-            txt.setText("This text is so nice");
+        }else if(vv instanceof MultiAutoCompleteTextView){
+            MultiAutoCompleteTextView txt=new MultiAutoCompleteTextView(getActivity());
+            txt.setText("The MultiAutoCompleteTextView Lorem ipsum has a lot of characters");
+            txt.setTextSize(18);
             txt.setTextColor(thePrimaryColor);
             linearLayout.addView(txt);
+        }else if(vv instanceof AutoCompleteTextView){
+            AutoCompleteTextView txt=new AutoCompleteTextView(getActivity());
+            txt.setText("The AutoCompleteTextView Lorem ipsum has a lot of characters");
+            txt.setTextSize(18);
+            txt.setTextColor(thePrimaryColor);
+            linearLayout.addView(txt);
+        }else if(vv instanceof EditText){
+            EditText txt=new EditText(getActivity());
+            txt.setText("The Edit text Lorem ipsum has a lot of characters");
+            txt.setTextSize(18);
+            txt.setTextColor(thePrimaryColor);
+            linearLayout.addView(txt);
+        }else if(vv instanceof TextView){
+            TextView txt=new TextView(getActivity());
+            txt.setText("This text is so nice and has a lot of characters");
+            txt.setTextSize(22);
+            txt.setTextColor(thePrimaryColor);
+            linearLayout.addView(txt);
+            Log.wtf("wtf","wtf again");
         }
 
 
