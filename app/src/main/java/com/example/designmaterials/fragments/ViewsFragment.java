@@ -39,7 +39,7 @@ public class ViewsFragment extends Fragment {
 
     private class LayoutViewPagerAdapter extends FragmentPagerAdapter {
 
-        private int[] layouts = {R.layout.layout_view_one};
+        private int[] layouts = {R.layout.layout_view_one, R.layout.layout_view_two};
 
         public LayoutViewPagerAdapter(@NonNull FragmentManager fm) {
             super(fm);

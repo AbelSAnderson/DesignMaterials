@@ -21,9 +21,19 @@
     <string name="layoutViewOneEmail">Email</string>
     <string name="layoutViewOneEmailHint">Example@email.com</string>
     <string name="layoutViewOnePassword">Password</string>
-    <string name="layoutViewOnePasswordHint">IHasGoodPass</string>
+    <string name="layoutViewOnePasswordHint">Password</string>
     <string name="layoutViewOneCheckBox">Remember my Login</string>
     <string name="layoutViewOneLogin">Login</string>
+
+    <string name="layoutViewTwoTitle">Sample Purchase Screen</string>
+    <string name="layoutViewTwoPictureDescription">Sample Product</string>
+    <string name="layoutViewTwoWidgetSmall">Small</string>
+    <string name="layoutViewTwoWidgetMedium">Medium</string>
+    <string name="layoutViewTwoWidgetLarge">Large</string>
+    <string name="layoutViewTwoQuantity">Quantity</string>
+    <string name="layoutViewTwoLongSleeve">Long Sleeve</string>
+    <string name="layoutViewTwoAddToCart">Add to Cart</string>
+
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
