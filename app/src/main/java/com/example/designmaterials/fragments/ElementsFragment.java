@@ -42,7 +42,6 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -52,7 +51,6 @@ public class ElementsFragment extends Fragment {
     public ElementsFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -75,7 +73,7 @@ public class ElementsFragment extends Fragment {
 //        elements.add(new Element("ImageButton", new ImageButton(getContext())));
 //        elements.add(new Element("ChipGroup", new ChipGroup(getContext())));
 
-        //Adding Chip Breaks the Program; Removing for now.
+        //Adding Chip Breaks the Program; Removing for now. - Abel
         //elements.add(new Element("Chip", new Chip(getContext())));
 
 //        elements.add(new Element("CheckBox", new CheckBox(getContext())));
