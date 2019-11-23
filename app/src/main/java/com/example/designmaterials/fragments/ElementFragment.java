@@ -109,9 +109,9 @@ public class ElementFragment extends Fragment {
         } else if (vv instanceof TextView) {
             TextView txt = new TextView(getActivity());
             if(vv.getTag().toString()=="title"){
-                txt.setText("The lazy dog jumps happy");
+                txt.setText(R.string.text_heading);
             }else{
-                txt.setText("Client times, found harmonic the of the tag picture the okay. Boss salutary me. Too she being house a even empire team- an as samples we of late person.");
+                txt.setText(R.string.text_long);
             }
 
             txt.setTextSize(22);
