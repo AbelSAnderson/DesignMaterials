@@ -39,7 +39,7 @@ public class CreditsFragment extends Fragment {
 
         ArrayList<Attribution> attributions = new ArrayList<>();
 
-        attributions.add(new Attribution("Designer", "Ndicirm Strazimiri", "''"));
+        attributions.add(new Attribution("Designer", "Ndricim Strazimiri", "''"));
         attributions.add(new Attribution("Idea Man", "Abel Anderson", "''"));
 
 

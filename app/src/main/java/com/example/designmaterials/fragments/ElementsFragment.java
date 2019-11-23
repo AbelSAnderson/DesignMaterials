@@ -62,40 +62,41 @@ public class ElementsFragment extends Fragment {
         ArrayList<Element> elements = new ArrayList<>();
 
         //Text Elements
-        elements.add(new Element("TextView", new TextView(getContext())));
-        elements.add(new Element("Plain Text", new EditText(getContext())));
-        elements.add(new Element("AutoCompleteTextView", new AutoCompleteTextView(getContext())));
-        elements.add(new Element("MultiAutoCompleteTextView", new MultiAutoCompleteTextView(getContext())));
-        elements.add(new Element("CheckedTextView", new CheckedTextView(getContext())));
-        elements.add(new Element("TextInputLayout", new TextInputLayout(getContext())));
+        elements.add(new Element("Heading", new TextView(getContext()),"title"));
+        elements.add(new Element("Body", new TextView(getContext()),"body"));
+//        elements.add(new Element("Plain Text", new EditText(getContext())));
+//        elements.add(new Element("AutoCompleteTextView", new AutoCompleteTextView(getContext())));
+//        elements.add(new Element("MultiAutoCompleteTextView", new MultiAutoCompleteTextView(getContext())));
+//        elements.add(new Element("CheckedTextView", new CheckedTextView(getContext())));
+//        elements.add(new Element("TextInputLayout", new TextInputLayout(getContext())));
 
         //Buttons
-        elements.add(new Element("Button", new Button(getContext())));
-        elements.add(new Element("ImageButton", new ImageButton(getContext())));
-        elements.add(new Element("ChipGroup", new ChipGroup(getContext())));
+        elements.add(new Element("Button", new Button(getContext()),"button"));
+//        elements.add(new Element("ImageButton", new ImageButton(getContext())));
+//        elements.add(new Element("ChipGroup", new ChipGroup(getContext())));
 
         //Adding Chip Breaks the Program; Removing for now.
         //elements.add(new Element("Chip", new Chip(getContext())));
 
-        elements.add(new Element("CheckBox", new CheckBox(getContext())));
-        elements.add(new Element("RadioGroup", new RadioGroup(getContext())));
-        elements.add(new Element("RadioButton", new RadioButton(getContext())));
-        elements.add(new Element("ToggleButton", new ToggleButton(getContext())));
-        elements.add(new Element("Switch", new Switch(getContext())));
-        elements.add(new Element("FloatingActionButton", new FloatingActionButton(getContext())));
+//        elements.add(new Element("CheckBox", new CheckBox(getContext())));
+//        elements.add(new Element("RadioGroup", new RadioGroup(getContext())));
+//        elements.add(new Element("RadioButton", new RadioButton(getContext())));
+//        elements.add(new Element("ToggleButton", new ToggleButton(getContext())));
+//        elements.add(new Element("Switch", new Switch(getContext())));
+//        elements.add(new Element("FloatingActionButton", new FloatingActionButton(getContext())));
 
         //Widgets
-        elements.add(new Element("View", new View(getContext())));
-        elements.add(new Element("ImageView", new ImageView(getContext())));
-        elements.add(new Element("WebView", new WebView(getContext())));
-        elements.add(new Element("VideoView", new VideoView(getContext())));
-        elements.add(new Element("CalendarView", new CalendarView(getContext())));
-        elements.add(new Element("ProgressBar", new ProgressBar(getContext())));
-        elements.add(new Element("SeekBar", new SeekBar(getContext())));
-        elements.add(new Element("RatingBar", new RatingBar(getContext())));
-        elements.add(new Element("SearchView", new SearchView(getContext())));
-        elements.add(new Element("TextureView", new TextureView(getContext())));
-        elements.add(new Element("SurfaceView", new SurfaceView(getContext())));
+//        elements.add(new Element("View", new View(getContext())));
+//        elements.add(new Element("ImageView", new ImageView(getContext())));
+//        elements.add(new Element("WebView", new WebView(getContext())));
+//        elements.add(new Element("VideoView", new VideoView(getContext())));
+//        elements.add(new Element("CalendarView", new CalendarView(getContext())));
+//        elements.add(new Element("ProgressBar", new ProgressBar(getContext())));
+//        elements.add(new Element("SeekBar", new SeekBar(getContext())));
+//        elements.add(new Element("RatingBar", new RatingBar(getContext())));
+//        elements.add(new Element("SearchView", new SearchView(getContext())));
+//        elements.add(new Element("TextureView", new TextureView(getContext())));
+//        elements.add(new Element("SurfaceView", new SurfaceView(getContext())));
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerViewElements);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
