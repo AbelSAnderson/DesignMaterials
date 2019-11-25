@@ -28,6 +28,10 @@
                 android:id="@+id/nav_icons"
                 android:icon="@drawable/ic_menu_share"
                 android:title="@string/menu_icons" />
+            <item
+                android:id="@+id/nav_credits"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/menu_credits" />
         </menu>
     </item>
 
