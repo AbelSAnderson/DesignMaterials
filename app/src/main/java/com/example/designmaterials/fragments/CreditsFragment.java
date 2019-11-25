@@ -2,6 +2,8 @@ package com.example.designmaterials.fragments;
 
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -37,14 +40,24 @@ public class CreditsFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_credits, container, false);
 
-        ArrayList<Attribution> attributions = new ArrayList<>();
+        final ArrayList<Attribution> attributions = new ArrayList<>();
 
-        attributions.add(new Attribution("Designer", "Ndricim Strazimiri", "''"));
-        attributions.add(new Attribution("Idea Man", "Abel Anderson", "''"));
+        attributions.add(new Attribution("Designer", "Ndricim Strazimiri", "Github", "https://github.com/nstrazimiri"));
+        attributions.add(new Attribution("Idea Man", "Abel Anderson", "Github", "https://github.com/AbelSAnderson"));
 
+        ListView listView = view.findViewById(R.id.creditListView);
+        listView.setAdapter(new creditListViewAdapter(getContext(), attributions));
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(attributions.get(position).getLink()));
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
 
-        ((ListView) view.findViewById(R.id.creditListView)).setAdapter(new creditListViewAdapter(getContext(), attributions));
 
         return view;
     }
@@ -66,7 +79,7 @@ public class CreditsFragment extends Fragment {
 
             ((TextView) convertView.findViewById(R.id.creditTitle)).setText(item.getTitle());
             ((TextView) convertView.findViewById(R.id.creditName)).setText(item.getName());
-            ((TextView) convertView.findViewById(R.id.creditDescription)).setText(item.getDescription());
+            ((TextView) convertView.findViewById(R.id.linkText)).setText(item.getLinkText());
 
             return convertView;
         }

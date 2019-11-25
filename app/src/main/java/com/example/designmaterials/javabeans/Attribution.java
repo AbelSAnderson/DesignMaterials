@@ -4,12 +4,14 @@ public class Attribution {
 
     private String title;
     private String name;
-    private String description;
+    private String linkText;
+    private String link;
 
-    public Attribution(String title, String name, String description) {
+    public Attribution(String title, String name, String linkText, String link) {
         this.title = title;
         this.name = name;
-        this.description = description;
+        this.linkText = linkText;
+        this.link = link;
     }
 
     public String getTitle() {
@@ -20,7 +22,11 @@ public class Attribution {
         return name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getLinkText() {
+        return linkText;
+    }
+
+    public String getLink() {
+        return link;
     }
 }
