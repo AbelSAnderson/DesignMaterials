@@ -50,8 +50,15 @@
     <string name="phonePermissionTitle">Phone Permission</string>
     <string name="phonePermissionMessage">We need access to your phone in order to make a call.</string>
 
-    <string name="emailIntentSubject">Design Colors and Fonts from the Design Materials App</string>
-    <string name="emailIntentMessage">Hello</string>
+    <string name="emailIntentSubject">Design Colors from the Design Materials App</string>
+    <string name="emailIntentMessageStart">Here are the colors you picked:</string>
+    <string name="emailIntentPrimaryColor">\n\nPrimary Color:&#32;</string>
+    <string name="emailIntentPrimaryColorLight">\nPrimary Color Light:&#32;</string>
+    <string name="emailIntentPrimaryColorDark">\nPrimary Color Dark:&#32;</string>
+    <string name="emailIntentSecondaryColor">\nSecondary Color:&#32;</string>
+    <string name="emailIntentSecondaryColorLight">\nSecondary Color Light:&#32;</string>
+    <string name="emailIntentSecondaryColorDark">\nSecondary Color Dark:&#32;</string>
+    <string name="emailIntentMessageEnd">\n\nThank you for using our app!</string>
 
     <!-- Placeholder Strings -->
     <string name="text_heading">The lazy dog jumps happy</string>

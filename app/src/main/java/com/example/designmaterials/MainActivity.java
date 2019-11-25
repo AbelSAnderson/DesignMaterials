@@ -66,11 +66,11 @@ public class MainActivity extends AppCompatActivity {
             case LinksFragment.PERMISSION_TEXT:
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto: 0000000000"));
-                    intent.putExtra("sms_body", "I am having trouble with ");
+                    intent.putExtra("sms_body", getString(R.string.smsIntentMessage));
                     if (intent.resolveActivity(getPackageManager()) != null) {
                         startActivity(intent);
                     } else {
-                        Toast.makeText(this, "No software installed to complete task", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, getString(R.string.errorNoSoftware), Toast.LENGTH_SHORT).show();
                     }
                 }
                 break;
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                     if (intent.resolveActivity(getPackageManager()) != null) {
                         startActivity(intent);
                     } else {
-                        Toast.makeText(this, "No software installed to complete task", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, getString(R.string.errorNoSoftware), Toast.LENGTH_SHORT).show();
                     }
                 }
                 break;
