@@ -34,12 +34,26 @@
     <string name="layoutViewTwoLongSleeve">Long Sleeve</string>
     <string name="layoutViewTwoAddToCart">Add to Cart</string>
 
-    <!-- LinkFragment Strings -->
+    <!-- LinksFragment Strings -->
     <string name="textButton">Text Tech Support</string>
     <string name="phoneButton">Phone Tech Support</string>
     <string name="emailButton">Email Design Choices</string>
     <string name="mapButton">View Material Design Headquarters</string>
 
+    <string name="permissionAlertDialogButtonText">OK</string>
+    <string name="errorNoSoftware">No software installed to complete task</string>
+
+    <string name="smsPermissionTitle">SMS Permission</string>
+    <string name="smsPermissionMessage">We need access to SMS in order to send a message</string>
+    <string name="smsIntentMessage">I am having trouble with </string>
+
+    <string name="phonePermissionTitle">Phone Permission</string>
+    <string name="phonePermissionMessage">We need access to your phone in order to make a call.</string>
+
+    <string name="emailIntentSubject">Design Colors and Fonts from the Design Materials App</string>
+    <string name="emailIntentMessage">Hello</string>
+
+    <!-- Placeholder Strings -->
     <string name="text_heading">The lazy dog jumps happy</string>
     <string name="text_short">Too she being house a even empire team- an as samples we of late person.</string>
     <string name="text_long">Client times, found harmonic the of the tag picture the okay. Boss salutary me. Too she being house a even empire team- an as samples we of late person.</string>

@@ -43,8 +43,8 @@ public class LinksFragment extends Fragment {
             public void onClick(View view) {
                 if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
                     if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.SEND_SMS)) {
-                        final AlertDialog alertDialog = new AlertDialog.Builder(getContext()).setTitle("SMS Permission").setMessage("We need access to SMS in order to send a message").create();
-                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+                        final AlertDialog alertDialog = new AlertDialog.Builder(getContext()).setTitle(getString(R.string.smsPermissionTitle)).setMessage(getString(R.string.smsPermissionMessage)).create();
+                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getString(R.string.permissionAlertDialogButtonText), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 alertDialog.dismiss();
@@ -57,11 +57,11 @@ public class LinksFragment extends Fragment {
                     }
                 } else {
                     Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto: 0000000000"));
-                    intent.putExtra("sms_body", "I am having trouble with ");
+                    intent.putExtra("sms_body", getString(R.string.smsIntentMessage));
                     if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
                         startActivity(intent);
                     } else {
-                        Toast.makeText(getActivity(), "No software installed to complete task", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), getString(R.string.errorNoSoftware), Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -72,8 +72,8 @@ public class LinksFragment extends Fragment {
             public void onClick(View view) {
                 if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                     if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.CALL_PHONE)) {
-                        final AlertDialog alertDialog = new AlertDialog.Builder(getContext()).setTitle("Phone Permission").setMessage("We need access to your phone in order to make a call.").create();
-                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+                        final AlertDialog alertDialog = new AlertDialog.Builder(getContext()).setTitle(getString(R.string.phonePermissionTitle)).setMessage(getString(R.string.phonePermissionMessage)).create();
+                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getString(R.string.permissionAlertDialogButtonText), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 alertDialog.dismiss();
@@ -89,7 +89,7 @@ public class LinksFragment extends Fragment {
                     if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
                         startActivity(intent);
                     } else {
-                        Toast.makeText(getActivity(), "No software installed to complete task", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), getString(R.string.errorNoSoftware), Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -99,12 +99,12 @@ public class LinksFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"));
-                intent.putExtra(Intent.EXTRA_SUBJECT, "Design Colors and Fonts from the Design Materials App");
-                intent.putExtra(Intent.EXTRA_TEXT, "");
+                intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.emailIntentSubject));
+                intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.emailIntentMessage));
                 if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
                     startActivity(intent);
                 } else {
-                    Toast.makeText(getContext(), "No software installed to complete task", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), getString(R.string.errorNoSoftware), Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -116,7 +116,7 @@ public class LinksFragment extends Fragment {
                 if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
                     startActivity(intent);
                 } else {
-                    Toast.makeText(getContext(), "No software installed to complete task", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), getString(R.string.errorNoSoftware), Toast.LENGTH_SHORT).show();
                 }
             }
         });
