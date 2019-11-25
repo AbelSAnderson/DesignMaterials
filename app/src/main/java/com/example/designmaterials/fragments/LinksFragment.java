@@ -33,7 +33,6 @@ public class LinksFragment extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -99,7 +98,26 @@ public class LinksFragment extends Fragment {
         view.findViewById(R.id.emailButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"));
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Design Colors and Fonts from the Design Materials App");
+                intent.putExtra(Intent.EXTRA_TEXT, "");
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getContext(), "No software installed to complete task", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
+        view.findViewById(R.id.mapButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=37.4088695,-122.0773546(Google Headquarters)"));
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getContext(), "No software installed to complete task", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

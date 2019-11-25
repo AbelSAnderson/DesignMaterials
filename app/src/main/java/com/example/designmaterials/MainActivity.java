@@ -76,8 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case LinksFragment.PERMISSION_CALL_PHONE:
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto: 5195672408"));
-                    intent.putExtra("sms_body", "Your app is decent, but it still needs some improvements...");
+                    Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel: 0000000000"));
                     if (intent.resolveActivity(getPackageManager()) != null) {
                         startActivity(intent);
                     } else {
