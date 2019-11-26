@@ -26,6 +26,37 @@
     <string name="settingAppColorsTitle">Use Selected Colors</string>
     <string name="settingAppColorsSummary">Change the app theme to the colors you have selected</string>
 
+    <!-- DesignFragment Strings -->
+    <string name="designTitle">Pick your Color</string>
+    <string name="designLightColor">Light Color</string>
+    <string name="designDarkColor">Dark Color</string>
+    <string name="designSaveColorsButton">Next</string>
+
+    <string name="designPrimaryColorDisplayPrimary">Primary</string>
+    <string name="designPrimaryColorDisplaySecondary">Secondary</string>
+    <string name="designColorSavedMessage">Color Saved. Check the home Page</string>
+
+    <!-- ElementFragment String -->
+    <string name="elementMultiAutoCompleteTextView">The MultiAutoCompleteTextView Lorem ipsum has a lot of characters</string>
+    <string name="elementAutoCompleteTextView">The AutoCompleteTextView Lorem ipsum has a lot of characters</string>
+    <string name="elementEditText">The Edit text Lorem ipsum has a lot of characters</string>
+
+    <!-- TODO: Create Externalize Strings for Each element we are using -->
+
+    <string name="elementFontTitle">Font Family</string>
+    <string name="elementRoboto">Roboto</string>
+    <string name="elementOpenSans">Open Sans</string>
+    <string name="elementMontserrat">Montserrat</string>
+    <string name="elementPlayfairDisplay">Playfair Display</string>
+    <string name="elementDarkerGrotesque">Darker Grotesque</string>
+
+    <string name="elementFontWeightTitle">Font Weight</string>
+    <string name="elementFontWeightBold">Bold</string>
+    <string name="elementFontWeightLight">Light</string>
+    <string name="elementFontWeightRegular">Regular</string>
+
+    <string name="elementFontSizeTitle">Font Size</string>
+
     <!-- LayoutViews Strings -->
     <string name="layoutViewOneTitle">Sample Login Screen</string>
     <string name="layoutViewOneEmail">Email</string>
@@ -69,6 +100,17 @@
     <string name="emailIntentSecondaryColorLight">\nSecondary Color Light:&#32;</string>
     <string name="emailIntentSecondaryColorDark">\nSecondary Color Dark:&#32;</string>
     <string name="emailIntentMessageEnd">\n\nThank you for using our app!</string>
+
+    <!-- Credits Strings -->
+    <string name="creditGithubLinkName">Github</string>
+
+    <string name="creditNdricimTitle">Designer</string>
+    <string name="creditNdricimName">Ndricim Strazimiri</string>
+    <string name="creditNdricimLink">https://github.com/nstrazimiri</string>
+
+    <string name="creditAbelTitle">Idea Man</string>
+    <string name="creditAbelName">Abel Anderson</string>
+    <string name="creditAbelLink">https://github.com/AbelSAnderson</string>
 
     <!-- Placeholder Strings -->
     <string name="text_heading">The lazy dog jumps happy</string>

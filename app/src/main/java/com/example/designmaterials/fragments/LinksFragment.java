@@ -1,6 +1,5 @@
 package com.example.designmaterials.fragments;
 
-
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -21,7 +20,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.designmaterials.R;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -100,15 +98,15 @@ public class LinksFragment extends Fragment {
         view.findViewById(R.id.emailButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SharedPreferences sharedPreferences=getActivity().getPreferences(Context.MODE_PRIVATE);
+                SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
 
                 String message = getString(R.string.emailIntentMessageStart) +
-                        getString(R.string.emailIntentPrimaryColor) + String.format("#%06X", (0xFFFFFF & sharedPreferences.getInt("primaryColor",123))) +
-                        getString(R.string.emailIntentPrimaryColorLight) + String.format("#%06X", (0xFFFFFF & sharedPreferences.getInt("primaryColorLight",123))) +
-                        getString(R.string.emailIntentPrimaryColorDark) + String.format("#%06X", (0xFFFFFF & sharedPreferences.getInt("primaryColorDark",123))) +
-                        getString(R.string.emailIntentSecondaryColor) + String.format("#%06X", (0xFFFFFF & sharedPreferences.getInt("secondaryColor",123))) +
-                        getString(R.string.emailIntentSecondaryColorLight) + String.format("#%06X", (0xFFFFFF & sharedPreferences.getInt("secondaryColorLight",123))) +
-                        getString(R.string.emailIntentSecondaryColorDark) + String.format("#%06X", (0xFFFFFF & sharedPreferences.getInt("secondaryColorDark",123))) +
+                        getString(R.string.emailIntentPrimaryColor) + String.format("#%06X", (0xFFFFFF & sharedPreferences.getInt("primaryColor", 123))) +
+                        getString(R.string.emailIntentPrimaryColorLight) + String.format("#%06X", (0xFFFFFF & sharedPreferences.getInt("primaryColorLight", 123))) +
+                        getString(R.string.emailIntentPrimaryColorDark) + String.format("#%06X", (0xFFFFFF & sharedPreferences.getInt("primaryColorDark", 123))) +
+                        getString(R.string.emailIntentSecondaryColor) + String.format("#%06X", (0xFFFFFF & sharedPreferences.getInt("secondaryColor", 123))) +
+                        getString(R.string.emailIntentSecondaryColorLight) + String.format("#%06X", (0xFFFFFF & sharedPreferences.getInt("secondaryColorLight", 123))) +
+                        getString(R.string.emailIntentSecondaryColorDark) + String.format("#%06X", (0xFFFFFF & sharedPreferences.getInt("secondaryColorDark", 123))) +
                         getString(R.string.emailIntentMessageEnd);
 
                 Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"));
