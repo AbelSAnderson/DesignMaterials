@@ -5,7 +5,6 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
 
     <!-- Menu Strings -->
     <string name="menu_home">Home</string>
@@ -15,6 +14,17 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_links">Links</string>
     <string name="menu_credits">Credits</string>
+    <string name="menu_settings">Settings</string>
+
+    <!-- Settings Strings -->
+    <string name="settingPixelTitle">Use Px values</string>
+    <string name="settingPixelSummary">Use px instead of dp (Device Pixels)</string>
+
+    <string name="settingRgbTitle">Use Rgb values</string>
+    <string name="settingRgbSummary">Use Rgb instead of Hex</string>
+
+    <string name="settingAppColorsTitle">Use Selected Colors</string>
+    <string name="settingAppColorsSummary">Change the app theme to the colors you have selected</string>
 
     <!-- LayoutViews Strings -->
     <string name="layoutViewOneTitle">Sample Login Screen</string>
