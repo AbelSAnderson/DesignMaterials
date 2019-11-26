@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,12 +68,14 @@ public class DesignFragment extends Fragment {
         secondaryColorBtn.setTextColor(Color.WHITE);
         saveColorsBtn=view.findViewById(R.id.saveColorsBtn);
 
-        ColorPickerView colorPickerView = view.findViewById(R.id.colorPickerView);
-        colorPickerView.setPureColor(Color.RED);
+        final ColorPickerView colorPickerView = view.findViewById(R.id.colorPickerView);
+        colorPickerView.setPureColor(Color.BLUE);
+
 
         colorPickerView.setColorListener(new ColorListener() {
             @Override
             public void onColorSelected(int color, boolean fromUser) {
+                colorPickerView.setPureColor(Color.BLUE);
 
                 if(activeBtn=="primary"){
                     //check if default color is white, if so, don't get it.
@@ -140,6 +144,8 @@ public class DesignFragment extends Fragment {
 
                 Toast toast=Toast.makeText(getContext(),"Color Saved. Check the home Page",Toast.LENGTH_LONG);
                 toast.show();
+
+                Navigation.findNavController(view).navigate(R.id.action_nav_design_to_nav_elements);
             }
         });
 

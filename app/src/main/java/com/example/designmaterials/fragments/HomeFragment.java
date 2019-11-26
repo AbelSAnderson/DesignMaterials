@@ -54,10 +54,26 @@ public class HomeFragment extends Fragment {
         int theSecondaryColor=sharedPreferences.getInt("secondaryColor",123);
         int theSecondaryColorDark=sharedPreferences.getInt("secondaryColorDark",123);
         int theSecondaryColorLight=sharedPreferences.getInt("secondaryColorLight",123);
+        String headingFontName=sharedPreferences.getString("headingFontName","opensans");
+        String bodyFontName=sharedPreferences.getString("bodyFontName","opensans");
+        String buttonFontName=sharedPreferences.getString("buttonFontName","opensans");
+        String headingFontWeight=sharedPreferences.getString("headingFontWeight","");
+        String bodyFontWeight=sharedPreferences.getString("bodyFontWeight","");
+        String buttonFontWeight=sharedPreferences.getString("buttonFontWeight","");
+        int headingsFontsize=sharedPreferences.getInt("headingFontSize",22);
+        int bodyFontsize=sharedPreferences.getInt("bodyFontSize",22);
+        int buttonFontSize=sharedPreferences.getInt("buttonFontSize",22);
+
 
         primaryColor.setBackgroundColor(thePrimaryColor);
+        primaryColor.setTypeface(ElementFragment.elementFont(getActivity(), headingFontName, headingFontWeight));
+        primaryColor.setTextSize(headingsFontsize);
         primaryColorDark.setBackgroundColor(thePrimaryColorDark);
+        primaryColorDark.setTypeface(ElementFragment.elementFont(getActivity(), bodyFontName, bodyFontWeight));
+        primaryColorDark.setTextSize(bodyFontsize);
         primaryColorLight.setBackgroundColor(thePrimaryColorLight);
+        primaryColorLight.setTypeface(ElementFragment.elementFont(getActivity(), buttonFontName, buttonFontWeight));
+        primaryColorLight.setTextSize(buttonFontSize);
 
         secondaryColor.setBackgroundColor(theSecondaryColor);
         secondaryColorDark.setBackgroundColor(theSecondaryColorDark);

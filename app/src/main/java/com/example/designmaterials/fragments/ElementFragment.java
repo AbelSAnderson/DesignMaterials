@@ -24,6 +24,7 @@ import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.designmaterials.R;
 import com.example.designmaterials.javabeans.Element;
@@ -40,8 +41,17 @@ import java.util.List;
  */
 public class ElementFragment extends Fragment {
 
-    public static String activeFontName = "opensans";
+    public static String headingFontName = "opensans";
+    public static String bodyFontName = "opensans";
+    public static String buttonFontName = "roboto";
+    public static String activeFontName = "roboto";
+    public static String headingFontWeight = "";
+    public static String bodyFontWeight = "";
+    public static String buttonFontWeight = "";
     public static String activeFontWeight = "";
+    public static int headingsFontsize=32;
+    public static int bodyFontsize=22;
+    public static int buttonFontsize=20;
 
     public ElementFragment() {
         // Required empty public constructor
@@ -66,12 +76,12 @@ public class ElementFragment extends Fragment {
 
         Element elemnt = (Element) bundle.getSerializable("Element");
 
-        View vv = elemnt.getViewElement();
+        final View vv = elemnt.getViewElement();
 
         TextView temp = new TextView(getActivity());
         DiscreteSeekBar sBar = view.findViewById(R.id.fontSize);
         linearLayout.removeAllViews();
-        Typeface font = setElementFont(getActivity(), activeFontName, activeFontWeight);
+        Typeface font = elementFont(getActivity(), bodyFontName, bodyFontWeight);
 
         if (vv instanceof Button) {
             Button btn = new Button(getActivity());
@@ -114,7 +124,7 @@ public class ElementFragment extends Fragment {
                 txt.setText(R.string.text_long);
             }
 
-            txt.setTextSize(22);
+            txt.setTextSize(bodyFontsize);
             txt.setTextColor(thePrimaryColor);
             temp = txt;
             txt.setTypeface(font);
@@ -128,6 +138,16 @@ public class ElementFragment extends Fragment {
             @Override
             public void onProgressChanged(DiscreteSeekBar seekBar, int value, boolean fromUser) {
                 finalTemp.setTextSize(value);
+                if(vv instanceof Button){
+                    buttonFontsize=value;
+                }else if(vv instanceof TextView){
+                    if(vv.getTag().toString()=="title"){
+                        headingsFontsize=value;
+                    }else{
+                        bodyFontsize=value;
+                    }
+                }
+
             }
             @Override
             public void onStartTrackingTouch(DiscreteSeekBar seekBar) {
@@ -148,16 +168,40 @@ public class ElementFragment extends Fragment {
                     RadioButton radioButton = view.findViewById(selectedWeight);
                     switch (radioButton.getTag().toString()) {
                         case "regular":
-                            activeFontWeight = "";
+                            if(vv instanceof Button){
+                                buttonFontWeight="";
+                            }else if(vv instanceof TextView){
+                                if(vv.getTag().toString()=="title"){
+                                    headingFontWeight="";
+                                }else{
+                                    bodyFontWeight="";
+                                }
+                            }
                             break;
                         case "light":
-                            activeFontWeight = "l";
+                            if(vv instanceof Button){
+                                buttonFontWeight="l";
+                            }else if(vv instanceof TextView){
+                                if(vv.getTag().toString()=="title"){
+                                    headingFontWeight="l";
+                                }else{
+                                    bodyFontWeight="l";
+                                }
+                            }
                             break;
                         case "bold":
-                            activeFontWeight = "b";
+                            if(vv instanceof Button){
+                                buttonFontWeight="b";
+                            }else if(vv instanceof TextView){
+                                if(vv.getTag().toString()=="title"){
+                                    headingFontWeight="b";
+                                }else{
+                                    bodyFontWeight="b";
+                                }
+                            }
                             break;
                     }
-                    finalTemp.setTypeface(setElementFont(getActivity(), activeFontName, activeFontWeight));
+                    finalTemp.setTypeface(elementFont(getActivity(), activeFontName, activeFontWeight));
                 }
             }
         });
@@ -172,7 +216,7 @@ public class ElementFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     activeFontName = arrayButtons[finalI].getTag().toString();
-                    finalTemp1.setTypeface(setElementFont(getActivity(), activeFontName, activeFontWeight));
+                    finalTemp1.setTypeface(elementFont(getActivity(), activeFontName, activeFontWeight));
                 }
             });
         }
@@ -181,6 +225,28 @@ public class ElementFragment extends Fragment {
 
 
 //        linearLayout.addView(vv);
+
+        Button saveFont=view.findViewById(R.id.saveFont);
+        saveFont.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor=sharedPreferences.edit();
+                editor.putString("headingFontName",headingFontName);
+                editor.putString("bodyFontName",bodyFontName);
+                editor.putString("buttonFontName",buttonFontName);
+                editor.putString("headingFontWeight",headingFontWeight);
+                editor.putString("bodyFontWeight",bodyFontWeight);
+                editor.putString("buttonFontWeight",buttonFontWeight);
+                editor.putInt("headingFontSize",headingsFontsize);
+                editor.putInt("bodyFontSize",bodyFontsize);
+                editor.putInt("buttonFontSize",buttonFontsize);
+                editor.commit();
+
+                Toast toast=Toast.makeText(getContext(),"Fonts Saved. Check the home Page",Toast.LENGTH_LONG);
+                toast.show();
+            }
+        });
 
         return view;
     }
@@ -191,7 +257,7 @@ public class ElementFragment extends Fragment {
      * @param fontWeight ""=regular  "l"=light "b"=bold
      * @return fontType
      */
-    public static Typeface setElementFont(Activity activity, String fontName, String fontWeight) {
+    public static Typeface elementFont(Activity activity, String fontName, String fontWeight) {
         Typeface font = Typeface.createFromAsset(activity.getAssets(), fontName + fontWeight + ".ttf");
         return font;
     }
