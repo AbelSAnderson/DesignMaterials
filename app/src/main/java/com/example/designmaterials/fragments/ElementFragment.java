@@ -177,6 +177,7 @@ public class ElementFragment extends Fragment {
                                     bodyFontWeight="";
                                 }
                             }
+                            activeFontWeight="";
                             break;
                         case "light":
                             if(vv instanceof Button){
@@ -188,6 +189,7 @@ public class ElementFragment extends Fragment {
                                     bodyFontWeight="l";
                                 }
                             }
+                            activeFontWeight="l";
                             break;
                         case "bold":
                             if(vv instanceof Button){
@@ -199,6 +201,7 @@ public class ElementFragment extends Fragment {
                                     bodyFontWeight="b";
                                 }
                             }
+                            activeFontWeight="b";
                             break;
                     }
                     finalTemp.setTypeface(elementFont(getActivity(), activeFontName, activeFontWeight));

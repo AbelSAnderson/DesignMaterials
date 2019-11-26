@@ -95,7 +95,10 @@ public class DesignFragment extends Fragment {
                     lightColor.setBackgroundColor(thePrimaryColorLight);
 
                 }else{
-                    theSecondaryColor=color;
+                    if(color!=-65538){
+                        theSecondaryColor=color;
+                    }
+
 
                     primaryColorDisplayer.setText("Secondary");
                     primaryColorDisplayer.setBackgroundColor(theSecondaryColor);

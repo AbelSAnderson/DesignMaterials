@@ -1,6 +1,7 @@
 package com.example.designmaterials.fragments;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.designmaterials.R;
 
@@ -53,7 +55,10 @@ public class ViewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(layout, container, false);
-
+        if(layout ==R.layout.layout_view_one){
+            TextView title=view.findViewById(R.id.title);
+            title.setTextColor(Color.BLUE);
+        }
         return view;
     }
 
