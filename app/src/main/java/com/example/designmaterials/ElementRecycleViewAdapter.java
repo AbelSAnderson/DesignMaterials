@@ -16,9 +16,9 @@ import java.util.ArrayList;
 
 public class ElementRecycleViewAdapter extends RecyclerView.Adapter {
 
-    public final String ELEMENT = "Element";
+    private final String ELEMENT = "Element";
 
-    ArrayList<Element> elements;
+    private ArrayList<Element> elements;
 
     public ElementRecycleViewAdapter(ArrayList<Element> elements) {
         this.elements = elements;
@@ -39,7 +39,7 @@ public class ElementRecycleViewAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        if(elements != null) {
+        if (elements != null) {
             return elements.size();
         }
         return 0;
@@ -48,7 +48,7 @@ public class ElementRecycleViewAdapter extends RecyclerView.Adapter {
     class ElementViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView name;
 
-        public ElementViewHolder(@NonNull View itemView) {
+        ElementViewHolder(@NonNull View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
             name = itemView.findViewById(R.id.elementName);
@@ -66,4 +66,3 @@ public class ElementRecycleViewAdapter extends RecyclerView.Adapter {
         }
     }
 }
-

@@ -59,9 +59,10 @@ public class ElementsFragment extends Fragment {
 
         ArrayList<Element> elements = new ArrayList<>();
 
+        //TODO: Externalize These text elements on when we finish thinning them out
         //Text Elements
-        elements.add(new Element("Heading", new TextView(getContext()),"title"));
-        elements.add(new Element("Body", new TextView(getContext()),"body"));
+        elements.add(new Element("Heading", new TextView(getContext()), "title"));
+        elements.add(new Element("Body", new TextView(getContext()), "body"));
 //        elements.add(new Element("Plain Text", new EditText(getContext())));
 //        elements.add(new Element("AutoCompleteTextView", new AutoCompleteTextView(getContext())));
 //        elements.add(new Element("MultiAutoCompleteTextView", new MultiAutoCompleteTextView(getContext())));
@@ -69,7 +70,7 @@ public class ElementsFragment extends Fragment {
 //        elements.add(new Element("TextInputLayout", new TextInputLayout(getContext())));
 
         //Buttons
-        elements.add(new Element("Button", new Button(getContext()),"button"));
+        elements.add(new Element("Button", new Button(getContext()), "button"));
 //        elements.add(new Element("ImageButton", new ImageButton(getContext())));
 //        elements.add(new Element("ChipGroup", new ChipGroup(getContext())));
 

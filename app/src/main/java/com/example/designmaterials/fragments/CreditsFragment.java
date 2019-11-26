@@ -1,6 +1,5 @@
 package com.example.designmaterials.fragments;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -23,17 +22,14 @@ import com.example.designmaterials.R;
 
 import java.util.ArrayList;
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
 public class CreditsFragment extends Fragment {
 
-
     public CreditsFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -42,8 +38,8 @@ public class CreditsFragment extends Fragment {
 
         final ArrayList<Attribution> attributions = new ArrayList<>();
 
-        attributions.add(new Attribution("Designer", "Ndricim Strazimiri", "Github", "https://github.com/nstrazimiri"));
-        attributions.add(new Attribution("Idea Man", "Abel Anderson", "Github", "https://github.com/AbelSAnderson"));
+        attributions.add(new Attribution(getString(R.string.creditNdricimTitle), getString(R.string.creditNdricimName), getString(R.string.creditGithubLinkName), getString(R.string.creditNdricimLink)));
+        attributions.add(new Attribution(getString(R.string.creditAbelTitle), getString(R.string.creditAbelName), getString(R.string.creditGithubLinkName), getString(R.string.creditAbelLink)));
 
         ListView listView = view.findViewById(R.id.creditListView);
         listView.setAdapter(new creditListViewAdapter(getContext(), attributions));
@@ -64,7 +60,7 @@ public class CreditsFragment extends Fragment {
 
     public class creditListViewAdapter extends ArrayAdapter<Attribution> {
 
-        public creditListViewAdapter(@NonNull Context context, ArrayList<Attribution> resource) {
+        creditListViewAdapter(@NonNull Context context, ArrayList<Attribution> resource) {
             super(context, 0, resource);
         }
 
@@ -73,7 +69,7 @@ public class CreditsFragment extends Fragment {
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
             Attribution item = getItem(position);
 
-            if(convertView == null) {
+            if (convertView == null) {
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.listview_credit, parent, false);
             }
 
@@ -84,5 +80,4 @@ public class CreditsFragment extends Fragment {
             return convertView;
         }
     }
-
 }
