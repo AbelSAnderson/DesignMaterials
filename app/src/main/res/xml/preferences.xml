@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- PX | DP -->
+    <CheckBoxPreference
+        android:checked="false"
+        android:key="pixelChoice"
+        android:summary="@string/settingPixelSummary"
+        android:title="@string/settingPixelTitle" />
+    <!-- RBG | HEX -->
+    <CheckBoxPreference
+        android:checked="false"
+        android:key="rgbChoice"
+        android:summary="@string/settingRgbSummary"
+        android:title="@string/settingRgbTitle" />
+    <!-- Use Colors on App -->
+    <SwitchPreference
+        android:key="colorChoice"
+        android:summary="@string/settingAppColorsSummary"
+        android:title="@string/settingAppColorsTitle" />
+</PreferenceScreen>

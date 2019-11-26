@@ -33,11 +33,6 @@
         android:label="View"
         tools:layout="@layout/fragment_views" />
     <fragment
-        android:id="@+id/nav_icons"
-        android:name="com.example.designmaterials.fragments.IconsFragment"
-        android:label="Icons"
-        tools:layout="@layout/fragment_icons" />
-    <fragment
         android:id="@+id/nav_credits"
         android:name="com.example.designmaterials.fragments.CreditsFragment"
         android:label="Credits"
@@ -47,4 +42,9 @@
         android:name="com.example.designmaterials.fragments.ElementFragment"
         android:label="Element"
         tools:layout="@layout/fragment_element" />
+    <fragment
+        android:id="@+id/nav_links"
+        android:name="com.example.designmaterials.fragments.LinksFragment"
+        android:label="Links"
+        tools:layout="@layout/fragment_links" />
 </navigation>

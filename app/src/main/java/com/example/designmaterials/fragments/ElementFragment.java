@@ -1,6 +1,5 @@
 package com.example.designmaterials.fragments;
 
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -10,19 +9,16 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.MultiAutoCompleteTextView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
-import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,15 +27,11 @@ import com.example.designmaterials.javabeans.Element;
 
 import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
-
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ElementFragment extends Fragment {
+
 
     public static String headingFontName = "opensans";
     public static String bodyFontName = "opensans";
@@ -53,10 +45,10 @@ public class ElementFragment extends Fragment {
     public static int bodyFontsize=22;
     public static int buttonFontsize=20;
 
+
     public ElementFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -94,7 +86,7 @@ public class ElementFragment extends Fragment {
 //            linearLayout.addView(btn);
         } else if (vv instanceof MultiAutoCompleteTextView) {
             MultiAutoCompleteTextView txt = new MultiAutoCompleteTextView(getActivity());
-            txt.setText("The MultiAutoCompleteTextView Lorem ipsum has a lot of characters");
+            txt.setText(getString(R.string.elementMultiAutoCompleteTextView));
             txt.setTextSize(18);
             txt.setTextColor(thePrimaryColor);
             txt.setTypeface(font);
@@ -102,7 +94,7 @@ public class ElementFragment extends Fragment {
 //            linearLayout.addView(txt);
         } else if (vv instanceof AutoCompleteTextView) {
             AutoCompleteTextView txt = new AutoCompleteTextView(getActivity());
-            txt.setText("The AutoCompleteTextView Lorem ipsum has a lot of characters");
+            txt.setText(getString(R.string.elementAutoCompleteTextView));
             txt.setTextSize(18);
             txt.setTextColor(thePrimaryColor);
             temp = txt;
@@ -110,7 +102,7 @@ public class ElementFragment extends Fragment {
 //            linearLayout.addView(txt);
         } else if (vv instanceof EditText) {
             EditText txt = new EditText(getActivity());
-            txt.setText("The Edit text Lorem ipsum has a lot of characters");
+            txt.setText(getString(R.string.elementEditText));
             txt.setTextSize(18);
             txt.setTextColor(thePrimaryColor);
             txt.setTypeface(font);
@@ -118,9 +110,9 @@ public class ElementFragment extends Fragment {
 //            linearLayout.addView(txt);
         } else if (vv instanceof TextView) {
             TextView txt = new TextView(getActivity());
-            if(vv.getTag().toString()=="title"){
+            if (vv.getTag().toString().equals("title")) {
                 txt.setText(R.string.text_heading);
-            }else{
+            } else {
                 txt.setText(R.string.text_long);
             }
 
@@ -129,7 +121,6 @@ public class ElementFragment extends Fragment {
             temp = txt;
             txt.setTypeface(font);
 //            linearLayout.addView(txt);
-//            Log.wtf("wtf","wtf again");
         }
 //        (TextView)temp.setTypeface(font);\
 
@@ -149,10 +140,12 @@ public class ElementFragment extends Fragment {
                 }
 
             }
+
             @Override
             public void onStartTrackingTouch(DiscreteSeekBar seekBar) {
 
             }
+
             @Override
             public void onStopTrackingTouch(DiscreteSeekBar seekBar) {
 
@@ -226,7 +219,6 @@ public class ElementFragment extends Fragment {
 
         linearLayout.addView(temp);
 
-
 //        linearLayout.addView(vv);
 
         Button saveFont=view.findViewById(R.id.saveFont);
@@ -264,5 +256,4 @@ public class ElementFragment extends Fragment {
         Typeface font = Typeface.createFromAsset(activity.getAssets(), fontName + fontWeight + ".ttf");
         return font;
     }
-
 }
