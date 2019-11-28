@@ -124,6 +124,14 @@
                 android:layout_weight="1"
                 android:tag="bold"
                 android:text="@string/elementFontWeightBold" />
+                <RadioButton
+                    android:id="@+id/regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:tag="regular"
+                    android:text="@string/elementFontWeightRegular" />
 
             <RadioButton
                 android:id="@+id/light"
@@ -133,14 +141,7 @@
                 android:tag="light"
                 android:text="@string/elementFontWeightLight" />
 
-            <RadioButton
-                android:id="@+id/regular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:checked="true"
-                android:tag="regular"
-                android:text="@string/elementFontWeightRegular" />
+
             </RadioGroup>
 
         </LinearLayout>

@@ -33,7 +33,7 @@ import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 public class ElementFragment extends Fragment {
 
 
-    public static String headingFontName = "opensans";
+    public static String headingFontName = "grotesque";
     public static String bodyFontName = "opensans";
     public static String buttonFontName = "roboto";
     public static String activeFontName = "roboto";
@@ -44,6 +44,9 @@ public class ElementFragment extends Fragment {
     public static int headingsFontsize=32;
     public static int bodyFontsize=22;
     public static int buttonFontsize=20;
+    public static String activeElement="";
+
+
 
 
     public ElementFragment() {
@@ -54,9 +57,17 @@ public class ElementFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View view = inflater.inflate(R.layout.fragment_element, container, false);
         SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
+        int sharedHeadingsFontsize=sharedPreferences.getInt("headingFontSize",22);
+        int sharedBodyFontsize=sharedPreferences.getInt("bodyFontSize",22);
+        int sharedButtonFontSize=sharedPreferences.getInt("buttonFontSize",22);
+        String sharedHeadingFontWeight=sharedPreferences.getString("headingFontWeight","");
+        String sharedBodyFontWeight=sharedPreferences.getString("bodyFontWeight","");
+        String sharedButtonFontWeight=sharedPreferences.getString("buttonFontWeight","");
+
+        final View view = inflater.inflate(R.layout.fragment_element, container, false);
         int thePrimaryColor = sharedPreferences.getInt("primaryColor", 123);
+        int thePrimaryColorDark = sharedPreferences.getInt("primaryColorDark", 123);
         ScrollView linearLayout = view.findViewById(R.id.elementHolder);
 
         int[] btnIds = new int[]{R.id.roboto, R.id.opensans, R.id.grotesque, R.id.montserrat, R.id.playfairdisplay};
@@ -77,81 +88,58 @@ public class ElementFragment extends Fragment {
 
         if (vv instanceof Button) {
             Button btn = new Button(getActivity());
-//            btn.setText("Click me nice");
-            btn.setText(vv.getTag().toString());
+            btn.setText(R.string.button_text);
             btn.setTextColor(Color.WHITE);
             btn.setBackgroundColor(thePrimaryColor);
             btn.setTypeface(font);
+            btn.setTextSize(sharedButtonFontSize);
             temp = btn;
-//            linearLayout.addView(btn);
-        } else if (vv instanceof MultiAutoCompleteTextView) {
-            MultiAutoCompleteTextView txt = new MultiAutoCompleteTextView(getActivity());
-            txt.setText(getString(R.string.elementMultiAutoCompleteTextView));
-            txt.setTextSize(18);
-            txt.setTextColor(thePrimaryColor);
-            txt.setTypeface(font);
-            temp = txt;
-//            linearLayout.addView(txt);
-        } else if (vv instanceof AutoCompleteTextView) {
-            AutoCompleteTextView txt = new AutoCompleteTextView(getActivity());
-            txt.setText(getString(R.string.elementAutoCompleteTextView));
-            txt.setTextSize(18);
-            txt.setTextColor(thePrimaryColor);
-            temp = txt;
-            txt.setTypeface(font);
-//            linearLayout.addView(txt);
-        } else if (vv instanceof EditText) {
-            EditText txt = new EditText(getActivity());
-            txt.setText(getString(R.string.elementEditText));
-            txt.setTextSize(18);
-            txt.setTextColor(thePrimaryColor);
-            txt.setTypeface(font);
-            temp = txt;
-//            linearLayout.addView(txt);
-        } else if (vv instanceof TextView) {
+            sBar.setProgress(sharedButtonFontSize);
+            SetActiveFontWeight(sharedButtonFontWeight,view);
+            activeElement="button";
+
+        }  else if (vv instanceof TextView) {
             TextView txt = new TextView(getActivity());
             if (vv.getTag().toString().equals("title")) {
+                sBar.setProgress(sharedHeadingsFontsize);
                 txt.setText(R.string.text_heading);
+                txt.setTextSize(sharedHeadingsFontsize);
+                SetActiveFontWeight(sharedHeadingFontWeight,view);
+                activeElement="title";
             } else {
+                sBar.setProgress(sharedBodyFontsize);
                 txt.setText(R.string.text_long);
+                txt.setTextSize(sharedBodyFontsize);
+                SetActiveFontWeight(sharedBodyFontWeight,view);
+                activeElement="body";
             }
 
-            txt.setTextSize(bodyFontsize);
             txt.setTextColor(thePrimaryColor);
             temp = txt;
             txt.setTypeface(font);
-//            linearLayout.addView(txt);
         }
-//        (TextView)temp.setTypeface(font);\
 
         final TextView finalTemp = temp;
         sBar.setOnProgressChangeListener(new DiscreteSeekBar.OnProgressChangeListener() {
             @Override
             public void onProgressChanged(DiscreteSeekBar seekBar, int value, boolean fromUser) {
                 finalTemp.setTextSize(value);
-                if(vv instanceof Button){
+                if(activeElement=="button"){
                     buttonFontsize=value;
-                }else if(vv instanceof TextView){
-                    if(vv.getTag().toString()=="title"){
-                        headingsFontsize=value;
-                    }else{
-                        bodyFontsize=value;
-                    }
+                }else if(activeElement=="title"){
+                    headingsFontsize=value;
+                }else if(activeElement=="body"){
+                    bodyFontsize=value;
                 }
 
             }
+//        (TextView)temp.setTypeface(font);\
 
             @Override
-            public void onStartTrackingTouch(DiscreteSeekBar seekBar) {
-
-            }
-
+            public void onStartTrackingTouch(DiscreteSeekBar seekBar) {}
             @Override
-            public void onStopTrackingTouch(DiscreteSeekBar seekBar) {
-
-            }
+            public void onStopTrackingTouch(DiscreteSeekBar seekBar) {}
         });
-
         fontWeightGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -161,38 +149,32 @@ public class ElementFragment extends Fragment {
                     RadioButton radioButton = view.findViewById(selectedWeight);
                     switch (radioButton.getTag().toString()) {
                         case "regular":
-                            if(vv instanceof Button){
+                            if(activeElement=="button"){
                                 buttonFontWeight="";
-                            }else if(vv instanceof TextView){
-                                if(vv.getTag().toString()=="title"){
-                                    headingFontWeight="";
-                                }else{
-                                    bodyFontWeight="";
-                                }
+                            }else if(activeElement=="title"){
+                                headingFontWeight="";
+                            }else if(activeElement=="body"){
+                                bodyFontWeight="";
                             }
                             activeFontWeight="";
                             break;
                         case "light":
-                            if(vv instanceof Button){
+                            if(activeElement=="button"){
                                 buttonFontWeight="l";
-                            }else if(vv instanceof TextView){
-                                if(vv.getTag().toString()=="title"){
-                                    headingFontWeight="l";
-                                }else{
-                                    bodyFontWeight="l";
-                                }
+                            }else if(activeElement=="title"){
+                                headingFontWeight="l";
+                            }else if(activeElement=="body"){
+                                bodyFontWeight="l";
                             }
                             activeFontWeight="l";
                             break;
                         case "bold":
-                            if(vv instanceof Button){
+                            if(activeElement=="button"){
                                 buttonFontWeight="b";
-                            }else if(vv instanceof TextView){
-                                if(vv.getTag().toString()=="title"){
-                                    headingFontWeight="b";
-                                }else{
-                                    bodyFontWeight="b";
-                                }
+                            }else if(activeElement=="title"){
+                                headingFontWeight="b";
+                            }else if(activeElement=="body"){
+                                bodyFontWeight="b";
                             }
                             activeFontWeight="b";
                             break;
@@ -202,7 +184,7 @@ public class ElementFragment extends Fragment {
             }
         });
         final TextView finalTemp1 = temp;
-
+        System.out.println("hiii");
         for (int i = 0; i < arrayButtons.length; i++) {
             arrayButtons[i] = view.findViewById(btnIds[i]);
             arrayButtons[i].setBackgroundColor(thePrimaryColor);
@@ -213,13 +195,32 @@ public class ElementFragment extends Fragment {
                 public void onClick(View view) {
                     activeFontName = arrayButtons[finalI].getTag().toString();
                     finalTemp1.setTypeface(elementFont(getActivity(), activeFontName, activeFontWeight));
+                    if(activeElement=="button"){
+                        buttonFontName=arrayButtons[finalI].getTag().toString();
+                    }else if(activeElement=="title"){
+                        headingFontName=arrayButtons[finalI].getTag().toString();
+                    }else if(activeElement=="body"){
+                        bodyFontName=arrayButtons[finalI].getTag().toString();
+                    }
                 }
             });
+
+            if(activeElement=="button"){
+                if(arrayButtons[i].getTag().equals(buttonFontName)){
+                    arrayButtons[i].setBackgroundColor(thePrimaryColorDark);
+                }
+            }else if(activeElement=="title"){
+                if(arrayButtons[i].getTag().equals(headingFontName)){
+                    arrayButtons[i].setBackgroundColor(thePrimaryColorDark);
+                }
+            }else if(activeElement=="body"){
+                if(arrayButtons[i].getTag().equals(bodyFontName)){
+                    arrayButtons[i].setBackgroundColor(thePrimaryColorDark);
+                }
+            }
         }
 
         linearLayout.addView(temp);
-
-//        linearLayout.addView(vv);
 
         Button saveFont=view.findViewById(R.id.saveFont);
         saveFont.setOnClickListener(new View.OnClickListener() {
@@ -255,5 +256,49 @@ public class ElementFragment extends Fragment {
     public static Typeface elementFont(Activity activity, String fontName, String fontWeight) {
         Typeface font = Typeface.createFromAsset(activity.getAssets(), fontName + fontWeight + ".ttf");
         return font;
+    }
+
+    /**
+     * Function to grab the active FontWeight from sharedPreferences and mark checked that radio button
+     * @param weight
+     * @param view
+     */
+    public static void SetActiveFontWeight(String weight, View view){
+        switch (weight){
+            case "":
+                RadioButton reg=view.findViewById(R.id.regular);
+                reg.setChecked(true);
+                break;
+            case "b":
+                RadioButton bold=view.findViewById(R.id.bold);
+                bold.setChecked(true);
+                break;
+            case "l":
+                RadioButton light=view.findViewById(R.id.light);
+                light.setChecked(true);
+                break;
+        }
+    }
+
+    /**
+     * Function to get the active font from SharedPreferences and mark that button as active.
+     * @param fontName
+     * @param view
+     */
+    public static void SetActiveFontFamily(String fontName, View view){
+        switch (fontName){
+            case "":
+                RadioButton reg=view.findViewById(R.id.regular);
+                reg.setChecked(true);
+                break;
+            case "b":
+                RadioButton bold=view.findViewById(R.id.bold);
+                bold.setChecked(true);
+                break;
+            case "l":
+                RadioButton light=view.findViewById(R.id.light);
+                light.setChecked(true);
+                break;
+        }
     }
 }

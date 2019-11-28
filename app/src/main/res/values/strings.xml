@@ -58,7 +58,7 @@
     <string name="elementFontSizeTitle">Font Size</string>
 
     <!-- LayoutViews Strings -->
-    <string name="layoutViewOneTitle">Sample Login Screen</string>
+    <string name="layoutViewOneTitle">Login</string>
     <string name="layoutViewOneEmail">Email</string>
     <string name="layoutViewOneEmailHint">Example@email.com</string>
     <string name="layoutViewOnePassword">Password</string>
@@ -66,7 +66,7 @@
     <string name="layoutViewOneCheckBox">Remember my Login</string>
     <string name="layoutViewOneLogin">Login</string>
 
-    <string name="layoutViewTwoTitle">Sample Purchase Screen</string>
+    <string name="layoutViewTwoTitle">GOT Dragon Male T-shirt</string>
     <string name="layoutViewTwoPictureDescription">Sample Product</string>
     <string name="layoutViewTwoWidgetSmall">Small</string>
     <string name="layoutViewTwoWidgetMedium">Medium</string>
@@ -115,8 +115,10 @@
     <!-- Placeholder Strings -->
     <string name="text_heading">The lazy dog jumps happy</string>
     <string name="text_short">Too she being house a even empire team- an as samples we of late person.</string>
+    <string name="text_long_long"> Too she being house a even empire team- an as samples we of late person.  Too she being house a even empire team- an as samples we of late person. Client times, found harmonic the of the tag picture the okay. Boss salutary me. Too she being house a even empire team- an as samples we of late person.Client times, found harmonic the of the tag picture the okay. Boss salutary me. Too she being house a even empire team- an as samples we of late person.</string>
     <string name="text_long">Client times, found harmonic the of the tag picture the okay. Boss salutary me. Too she being house a even empire team- an as samples we of late person.</string>
     <string name="button_text">Contact Us</string>
+    <string name="button_text_share">Share</string>
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
