@@ -1,63 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".fragments.HomeFragment">
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
+    tools:context=".fragments.HomeFragment" >
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/titlePadding"
+        android:text="@string/homeTitle"
+        android:textColor="@android:color/background_light"
+        android:textSize="@dimen/elementTitleFontSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/primaryColor"
-        android:layout_width="match_parent"
+        android:id="@+id/designButton"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#E91E63"
-        android:text="Primary Color"
-        android:textColor="#FFFFFF"
-        android:textSize="30px" />
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/buttonPadding"
+        android:text="@string/homeDesignButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/primaryColorLight"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:padding="@dimen/buttonPadding"
+        android:src="@drawable/architect_design"
+        app:layout_constraintBottom_toTopOf="@+id/designButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#E91E63"
-        android:text="Primary Color Light"
-        android:textColor="#FFFFFF"
-        android:textSize="30px" />
+        android:layout_marginTop="32dp"
+        android:padding="@dimen/textPadding"
+        android:text="@string/homeDescription"
+        android:textColor="@android:color/background_light"
+        android:textSize="@dimen/homeTextFontSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-    <Button
-        android:id="@+id/primaryColorDark"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#E91E63"
-        android:text="Primary Color Dark"
-        android:textColor="#FFFFFF"
-        android:textSize="30px" />
-
-    <Button
-        android:id="@+id/secondaryColor"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#E91E63"
-        android:text="Primary Color"
-        android:textColor="#FFFFFF"
-        android:textSize="30px" />
-
-    <Button
-        android:id="@+id/secondaryColorLight"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#E91E63"
-        android:text="Primary Color Light"
-        android:textColor="#FFFFFF"
-        android:textSize="30px" />
-
-    <Button
-        android:id="@+id/secondaryColorDark"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#E91E63"
-        android:text="Primary Color Dark"
-        android:textColor="#FFFFFF"
-        android:textSize="30px" />
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

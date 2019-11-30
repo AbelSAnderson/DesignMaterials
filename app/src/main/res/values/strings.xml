@@ -26,6 +26,12 @@
     <string name="settingAppColorsTitle">Use Selected Colors</string>
     <string name="settingAppColorsSummary">Change the app theme to the colors you have selected</string>
 
+    <!-- HomeFragment Strings -->
+    <string name="homeTitle">Welcome to Design Materials</string>
+    <string name="homeDescription">Design your android applications here.</string>
+    <string name="homePhotoDescription">Design Photo</string>
+    <string name="homeDesignButton">Start Designing</string>
+
     <!-- DesignFragment Strings -->
     <string name="designTitle">Pick your Color</string>
     <string name="designLightColor">Light Color</string>
