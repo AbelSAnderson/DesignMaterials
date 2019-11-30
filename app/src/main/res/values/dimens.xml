@@ -25,5 +25,5 @@
     <dimen name="elementTitleTextSize">24sp</dimen>
 
     <!-- LayoutHeight & LayoutWeight -->
-    <dimen name="elementTopHeight">190dp</dimen>
+    <dimen name="elementTopHeight">150dp</dimen>
 </resources>

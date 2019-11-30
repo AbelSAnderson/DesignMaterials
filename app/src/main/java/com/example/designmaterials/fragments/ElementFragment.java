@@ -2,12 +2,16 @@ package com.example.designmaterials.fragments;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +26,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.designmaterials.MainActivity;
 import com.example.designmaterials.R;
 import com.example.designmaterials.javabeans.Element;
 
@@ -68,6 +73,23 @@ public class ElementFragment extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_element, container, false);
         int thePrimaryColor = sharedPreferences.getInt("primaryColor", 123);
         int thePrimaryColorDark = sharedPreferences.getInt("primaryColorDark", 123);
+
+        System.out.println("thePrimaryColor:"+thePrimaryColor);
+        System.out.println("thePrimaryColorDark:"+thePrimaryColorDark);
+//        System.out.println("theSecondaryColor:"+theSecondaryColor);
+//        System.out.println("theSecondaryColorLight:"+theSecondaryColorLight);
+//        System.out.println("theSecondaryColorDark:"+SecondaryColorDark);
+        System.out.println("headingFontName:"+headingFontName);
+        System.out.println("bodyFontName:"+bodyFontName);
+        System.out.println("buttonFontName:"+buttonFontName);
+        System.out.println("headingFontWeight:"+headingFontWeight);
+        System.out.println("bodyFontWeight:"+bodyFontWeight);
+        System.out.println("buttonFontWeight:"+buttonFontWeight);
+        System.out.println("headingsFontsize:"+headingsFontsize);
+        System.out.println("bodyFontsize:"+bodyFontsize);
+        System.out.println("buttonFontSize:"+buttonFontsize);
+        System.out.println("8888*****************888888888888");
+
         ScrollView linearLayout = view.findViewById(R.id.elementHolder);
 
         int[] btnIds = new int[]{R.id.roboto, R.id.opensans, R.id.grotesque, R.id.montserrat, R.id.playfairdisplay};
@@ -184,7 +206,6 @@ public class ElementFragment extends Fragment {
             }
         });
         final TextView finalTemp1 = temp;
-        System.out.println("hiii");
         for (int i = 0; i < arrayButtons.length; i++) {
             arrayButtons[i] = view.findViewById(btnIds[i]);
             arrayButtons[i].setBackgroundColor(thePrimaryColor);
@@ -226,6 +247,19 @@ public class ElementFragment extends Fragment {
         saveFont.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                getContext().getTheme().applyStyle(R.style.MyRandomTheme,true);
+//                FragmentManager fragmentManager=getFragmentManager();
+//                FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+//                Fragment home=new ElementsFragment();
+//                fragmentTransaction.detach(home).attach(home).commit();
+//                Navigation.findNavController(view).navigate(R.id.action_nav_design_to_nav_elements);
+
+//                getActivity().setTheme(R.style.MyRandomTheme);
+//                Intent intent = new Intent(getContext(), MainActivity.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//
+//                startActivity(intent);
                 SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor=sharedPreferences.edit();
                 editor.putString("headingFontName",headingFontName);

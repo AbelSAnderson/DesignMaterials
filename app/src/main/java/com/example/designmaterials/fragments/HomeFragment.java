@@ -2,6 +2,7 @@ package com.example.designmaterials.fragments;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -25,7 +26,8 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
+        // Inflate the lonCreateayout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         Button primaryColor = view.findViewById(R.id.primaryColor);
         Button primaryColorLight = view.findViewById(R.id.primaryColorLight);
@@ -36,14 +38,14 @@ public class HomeFragment extends Fragment {
         Button secondaryColorDark = view.findViewById(R.id.secondaryColorDark);
 
         SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
-        int thePrimaryColor = sharedPreferences.getInt("primaryColor", 123);
-        int thePrimaryColorDark = sharedPreferences.getInt("primaryColorDark", 123);
-        int thePrimaryColorLight = sharedPreferences.getInt("primaryColorLight", 123);
+        int thePrimaryColor = sharedPreferences.getInt("primaryColor", Color.RED);
+        int thePrimaryColorDark = sharedPreferences.getInt("primaryColorDark", Color.RED);
+        int thePrimaryColorLight = sharedPreferences.getInt("primaryColorLight", Color.RED);
 
 
-        int theSecondaryColor=sharedPreferences.getInt("secondaryColor",123);
-        int theSecondaryColorDark=sharedPreferences.getInt("secondaryColorDark",123);
-        int theSecondaryColorLight=sharedPreferences.getInt("secondaryColorLight",123);
+        int theSecondaryColor=sharedPreferences.getInt("secondaryColor",Color.GREEN);
+        int theSecondaryColorDark=sharedPreferences.getInt("secondaryColorDark",Color.GREEN);
+        int theSecondaryColorLight=sharedPreferences.getInt("secondaryColorLight",Color.GREEN);
         String headingFontName=sharedPreferences.getString("headingFontName","opensans");
         String bodyFontName=sharedPreferences.getString("bodyFontName","opensans");
         String buttonFontName=sharedPreferences.getString("buttonFontName","opensans");
@@ -53,6 +55,21 @@ public class HomeFragment extends Fragment {
         int headingsFontsize=sharedPreferences.getInt("headingFontSize",22);
         int bodyFontsize=sharedPreferences.getInt("bodyFontSize",22);
         int buttonFontSize=sharedPreferences.getInt("buttonFontSize",22);
+//        System.out.println("thePrimaryColor:"+thePrimaryColor);
+//        System.out.println("thePrimaryColorLight:"+thePrimaryColorLight);
+//        System.out.println("thePrimaryColorDark:"+thePrimaryColorDark);
+//        System.out.println("theSecondaryColor:"+theSecondaryColor);
+//        System.out.println("theSecondaryColorLight:"+theSecondaryColorLight);
+//        System.out.println("theSecondaryColorDark:"+theSecondaryColorDark);
+//        System.out.println("headingFontName:"+headingFontName);
+//        System.out.println("bodyFontName:"+bodyFontName);
+//        System.out.println("buttonFontName:"+buttonFontName);
+//        System.out.println("headingFontWeight:"+headingFontWeight);
+//        System.out.println("bodyFontWeight:"+bodyFontWeight);
+//        System.out.println("buttonFontWeight:"+buttonFontWeight);
+//        System.out.println("headingsFontsize:"+headingsFontsize);
+//        System.out.println("bodyFontsize:"+bodyFontsize);
+//        System.out.println("buttonFontSize:"+buttonFontSize);
 
 
 
