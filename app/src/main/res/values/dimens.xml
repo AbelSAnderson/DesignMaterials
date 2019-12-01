@@ -6,6 +6,25 @@
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
-    <dimen name="titlePadding">10dp</dimen>
+    <!-- Padding -->
     <dimen name="textPadding">5dp</dimen>
+    <dimen name="titlePadding">10dp</dimen>
+    <dimen name="buttonPadding">20dp</dimen>
+    <dimen name="elementElementHolderPadding">17dp</dimen>
+    <dimen name="elementLinearLayoutPadding">17dp</dimen>
+
+    <!-- Margin -->
+    <dimen name="designButtonMarginTop">20dp</dimen>
+    <dimen name="designLayoutMarginTop">10dp</dimen>
+    <dimen name="elementFontButtonMargin">1dp</dimen>
+    <dimen name="elementTitleMarginTop">20dp</dimen>
+    <dimen name="buttonMargin">20dp</dimen>
+
+    <!-- Font Size -->
+    <dimen name="designTitleFontSize">30sp</dimen>
+    <dimen name="elementTitleFontSize">24sp</dimen>
+    <dimen name="homeTextFontSize">18sp</dimen>
+
+    <!-- LayoutHeight & LayoutWeight -->
+    <dimen name="elementTopHeight">190dp</dimen>
 </resources>

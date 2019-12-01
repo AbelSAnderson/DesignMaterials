@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/SingleElementView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragments.ElementFragment">
 
     <LinearLayout
         android:id="@+id/top"
         android:layout_width="match_parent"
-        android:layout_height="500px">
+        android:layout_height="@dimen/elementTopHeight">
+
         <ScrollView
             android:id="@+id/elementHolder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="40px" />
+            android:padding="@dimen/elementElementHolderPadding" />
     </LinearLayout>
 
     <LinearLayout
@@ -28,134 +29,135 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="40px"
-            android:text="Font Family"
+            android:text="@string/elementFontTitle"
+            android:textAlignment="center"
             android:textColor="#000"
-            android:textSize="25dp" />
+            android:textSize="@dimen/elementTitleFontSize" />
 
         <LinearLayout
             android:id="@+id/fontSelectContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingLeft="40px"
-            android:paddingRight="40px">
+            android:paddingLeft="@dimen/elementLinearLayoutPadding"
+            android:paddingRight="@dimen/elementLinearLayoutPadding">
 
             <Button
                 android:id="@+id/roboto"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3px"
+                android:layout_margin="@dimen/elementFontButtonMargin"
                 android:layout_weight="1"
                 android:tag="roboto"
-                android:text="Roboto" />
+                android:text="@string/elementRoboto" />
 
             <Button
                 android:id="@+id/opensans"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3px"
+                android:layout_margin="@dimen/elementFontButtonMargin"
                 android:layout_weight="1"
                 android:tag="opensans"
-                android:text="Open Sans" />
+                android:text="@string/elementOpenSans" />
 
             <Button
                 android:id="@+id/montserrat"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3px"
+                android:layout_margin="@dimen/elementFontButtonMargin"
                 android:layout_weight="1"
                 android:tag="montserrat"
-                android:text="Montserrat" />
+                android:text="@string/elementMontserrat" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingLeft="40px"
-            android:paddingRight="40px">
+            android:paddingLeft="@dimen/elementLinearLayoutPadding"
+            android:paddingRight="@dimen/elementLinearLayoutPadding">
 
             <Button
                 android:id="@+id/playfairdisplay"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3px"
+                android:layout_margin="@dimen/elementFontButtonMargin"
                 android:layout_weight="1"
                 android:tag="playfairdisplay"
-                android:text="Playfair Display" />
+                android:text="@string/elementPlayfairDisplay" />
 
             <Button
                 android:id="@+id/grotesque"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3px"
+                android:layout_margin="@dimen/elementFontButtonMargin"
                 android:layout_weight="1"
                 android:tag="grotesque"
-                android:text="Darker Grotesque" />
+                android:text="@string/elementDarkerGrotesque" />
         </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50px"
-            android:paddingLeft="40px"
-            android:text="Font Weight"
+            android:layout_marginTop="@dimen/elementTitleMarginTop"
+            android:text="@string/elementFontWeightTitle"
+            android:textAlignment="center"
             android:textColor="#000"
-            android:textSize="25dp" />
+            android:textSize="@dimen/elementTitleFontSize" />
 
         <LinearLayout
-            android:id="@+id/fontWeightContainer"
+            android:id="@+id/fontWeightGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingLeft="40px">
+            android:paddingLeft="@dimen/elementLinearLayoutPadding"
+            android:paddingRight="@dimen/elementLinearLayoutPadding">
 
-            <RadioGroup
-                android:id="@+id/fontWeightGroup"
-                android:layout_width="match_parent"
+            <RadioButton
+                android:id="@+id/bold"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:tag="bold"
+                android:text="@string/elementFontWeightBold" />
 
-                <RadioButton
-                    android:id="@+id/light"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:tag="light"
-                    android:text="Light" />
+            <RadioButton
+                android:id="@+id/light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:tag="light"
+                android:text="@string/elementFontWeightLight" />
 
-                <RadioButton
-                    android:id="@+id/regular"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:checked="true"
-                    android:tag="regular"
-                    android:text="Regular" />
+            <RadioButton
+                android:id="@+id/regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:tag="regular"
+                android:text="@string/elementFontWeightRegular" />
 
-                <RadioButton
-                    android:id="@+id/bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:tag="bold"
-                    android:text="Bold" />
-            </RadioGroup>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="40px">
+            android:padding="@dimen/elementLinearLayoutPadding">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Font Size"
+                android:text="@string/elementFontSizeTitle"
+                android:textAlignment="center"
                 android:textColor="#000"
-                android:textSize="25dp" />
+                android:textSize="@dimen/elementTitleFontSize" />
 
             <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
                 android:id="@+id/fontSize"

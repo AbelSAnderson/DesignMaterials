@@ -5,16 +5,63 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
 
     <!-- Menu Strings -->
     <string name="menu_home">Home</string>
     <string name="menu_design">Design</string>
     <string name="menu_views">View</string>
     <string name="menu_elements">Elements</string>
-    <string name="menu_icons">Icons</string>
     <string name="menu_tools">Tools</string>
+    <string name="menu_links">Links</string>
     <string name="menu_credits">Credits</string>
+    <string name="menu_settings">Settings</string>
+
+    <!-- Settings Strings -->
+    <string name="settingPixelTitle">Use Px values</string>
+    <string name="settingPixelSummary">Use px instead of dp (Device Pixels)</string>
+
+    <string name="settingRgbTitle">Use Rgb values</string>
+    <string name="settingRgbSummary">Use Rgb instead of Hex</string>
+
+    <string name="settingAppColorsTitle">Use Selected Colors</string>
+    <string name="settingAppColorsSummary">Change the app theme to the colors you have selected</string>
+
+    <!-- HomeFragment Strings -->
+    <string name="homeTitle">Welcome to Design Materials</string>
+    <string name="homeDescription">Design your android applications here.</string>
+    <string name="homePhotoDescription">Design Photo</string>
+    <string name="homeDesignButton">Start Designing</string>
+
+    <!-- DesignFragment Strings -->
+    <string name="designTitle">Pick your Color</string>
+    <string name="designLightColor">Light Color</string>
+    <string name="designDarkColor">Dark Color</string>
+    <string name="designSaveColorsButton">Next</string>
+
+    <string name="designPrimaryColorDisplayPrimary">Primary</string>
+    <string name="designPrimaryColorDisplaySecondary">Secondary</string>
+    <string name="designColorSavedMessage">Color Saved. Check the home Page</string>
+
+    <!-- ElementFragment String -->
+    <string name="elementMultiAutoCompleteTextView">The MultiAutoCompleteTextView Lorem ipsum has a lot of characters</string>
+    <string name="elementAutoCompleteTextView">The AutoCompleteTextView Lorem ipsum has a lot of characters</string>
+    <string name="elementEditText">The Edit text Lorem ipsum has a lot of characters</string>
+
+    <!-- TODO: Create Externalize Strings for Each element we are using -->
+
+    <string name="elementFontTitle">Font Family</string>
+    <string name="elementRoboto">Roboto</string>
+    <string name="elementOpenSans">Open Sans</string>
+    <string name="elementMontserrat">Montserrat</string>
+    <string name="elementPlayfairDisplay">Playfair Display</string>
+    <string name="elementDarkerGrotesque">Darker Grotesque</string>
+
+    <string name="elementFontWeightTitle">Font Weight</string>
+    <string name="elementFontWeightBold">Bold</string>
+    <string name="elementFontWeightLight">Light</string>
+    <string name="elementFontWeightRegular">Regular</string>
+
+    <string name="elementFontSizeTitle">Font Size</string>
 
     <!-- LayoutViews Strings -->
     <string name="layoutViewOneTitle">Sample Login Screen</string>
@@ -34,13 +81,48 @@
     <string name="layoutViewTwoLongSleeve">Long Sleeve</string>
     <string name="layoutViewTwoAddToCart">Add to Cart</string>
 
+    <!-- LinksFragment Strings -->
+    <string name="textButton">Text Tech Support</string>
+    <string name="phoneButton">Phone Tech Support</string>
+    <string name="emailButton">Email Design Choices</string>
+    <string name="mapButton">View Material Design Headquarters</string>
+
+    <string name="permissionAlertDialogButtonText">OK</string>
+    <string name="errorNoSoftware">No software installed to complete task</string>
+
+    <string name="smsPermissionTitle">SMS Permission</string>
+    <string name="smsPermissionMessage">We need access to SMS in order to send a message</string>
+    <string name="smsIntentMessage">I am having trouble with </string>
+
+    <string name="phonePermissionTitle">Phone Permission</string>
+    <string name="phonePermissionMessage">We need access to your phone in order to make a call.</string>
+
+    <string name="emailIntentSubject">Design Colors from the Design Materials App</string>
+    <string name="emailIntentMessageStart">Here are the colors you picked:</string>
+    <string name="emailIntentPrimaryColor">\n\nPrimary Color:&#32;</string>
+    <string name="emailIntentPrimaryColorLight">\nPrimary Color Light:&#32;</string>
+    <string name="emailIntentPrimaryColorDark">\nPrimary Color Dark:&#32;</string>
+    <string name="emailIntentSecondaryColor">\nSecondary Color:&#32;</string>
+    <string name="emailIntentSecondaryColorLight">\nSecondary Color Light:&#32;</string>
+    <string name="emailIntentSecondaryColorDark">\nSecondary Color Dark:&#32;</string>
+    <string name="emailIntentMessageEnd">\n\nThank you for using our app!</string>
+
+    <!-- Credits Strings -->
+    <string name="creditGithubLinkName">Github</string>
+
+    <string name="creditNdricimTitle">Designer</string>
+    <string name="creditNdricimName">Ndricim Strazimiri</string>
+    <string name="creditNdricimLink">https://github.com/nstrazimiri</string>
+
+    <string name="creditAbelTitle">Idea Man</string>
+    <string name="creditAbelName">Abel Anderson</string>
+    <string name="creditAbelLink">https://github.com/AbelSAnderson</string>
+
+    <!-- Placeholder Strings -->
     <string name="text_heading">The lazy dog jumps happy</string>
     <string name="text_short">Too she being house a even empire team- an as samples we of late person.</string>
     <string name="text_long">Client times, found harmonic the of the tag picture the okay. Boss salutary me. Too she being house a even empire team- an as samples we of late person.</string>
     <string name="button_text">Contact Us</string>
-
-
-
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>

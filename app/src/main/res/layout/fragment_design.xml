@@ -1,93 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/colorContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/colorContainer"
     tools:context=".fragments.DesignFragment">
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/designTitle"
         android:textAlignment="center"
-        android:textSize="30sp"
-        android:text="Pick your Color" />
+        android:textSize="@dimen/designTitleFontSize" />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
         <com.skydoves.colorpickerview.ColorPickerView
             android:id="@+id/colorPickerView"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            app:alpha_selector="0.8"
             app:alpha_flag="0.8"
-            app:palette="@drawable/palette"
+            app:alpha_selector="0.8"
             app:default_color="@color/colorPrimary"
+            app:palette="@drawable/palette"
             app:selector="@drawable/wheel" />
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/primaryColor"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_weight="1"
-                android:background="#903"
-                android:text="Primary" />
+                android:text="@string/designPrimaryColorDisplayPrimary"
+                android:textSize="14sp" />
+
             <LinearLayout
                 android:layout_width="fill_parent"
-                android:orientation="horizontal"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
                 <Button
                     android:id="@+id/lightColor"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Light Color"
-                    android:background="#673AB7"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:text="@string/designLightColor"
+                    android:textSize="14sp" />
+
                 <Button
                     android:id="@+id/darkColor"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Dark Color"
-                    android:background="#FF9800"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:text="@string/designDarkColor"
+                    android:textSize="14sp" />
             </LinearLayout>
 
         </LinearLayout>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_marginTop="30px"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/designLayoutMarginTop"
+        android:orientation="horizontal">
+
         <Button
             android:id="@+id/primaryColorBtn"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="match_parent"
-            android:text="Primary"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_height="wrap_content"/>
+            android:text="@string/designPrimaryColorDisplayPrimary"
+            android:textSize="14sp" />
+
         <Button
             android:id="@+id/secondaryColorBtn"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="match_parent"
-            android:text="Secondary"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_height="wrap_content"/>
+            android:text="@string/designPrimaryColorDisplaySecondary"
+            android:textSize="14sp" />
     </LinearLayout>
+
     <Button
-        android:layout_marginTop="50px"
-        android:layout_gravity="center"
         android:id="@+id/saveColorsBtn"
-        android:background="#903"
-        android:textColor="#fff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Next"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/designButtonMarginTop"
+        android:background="@color/designColorRed"
+        android:text="@string/designSaveColorsButton"
+        android:textColor="#fff"
+        android:textSize="14sp" />
 
 </LinearLayout>
