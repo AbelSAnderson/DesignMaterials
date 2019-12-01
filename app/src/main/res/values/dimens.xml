@@ -22,7 +22,8 @@
 
     <!-- Font Size -->
     <dimen name="designTitleFontSize">30sp</dimen>
-    <dimen name="elementTitleTextSize">24sp</dimen>
+    <dimen name="elementTitleFontSize">24sp</dimen>
+    <dimen name="homeTextFontSize">22sp</dimen>
 
     <!-- LayoutHeight & LayoutWeight -->
     <dimen name="elementTopHeight">150dp</dimen>
