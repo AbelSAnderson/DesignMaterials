@@ -1,5 +1,6 @@
 package com.example.designmaterials.fragments;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +9,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.designmaterials.R;
 
@@ -23,9 +25,20 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Typeface grotesque = Typeface.createFromAsset(getActivity().getAssets(),  "grotesque.ttf");
+        Typeface roboto = Typeface.createFromAsset(getActivity().getAssets(),  "opensans.ttf");
 
         // Inflate the lonCreateayout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        TextView title=view.findViewById(R.id.textView5);
+        TextView desc=view.findViewById(R.id.textView6);
+
+
+        title.setTypeface(grotesque);
+        title.setTextSize(32);
+
+        desc.setTypeface(roboto);
+        desc.setTextSize(18);
 
         view.findViewById(R.id.designButton).setOnClickListener(new View.OnClickListener() {
             @Override

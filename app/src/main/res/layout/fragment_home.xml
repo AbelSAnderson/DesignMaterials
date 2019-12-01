@@ -15,6 +15,9 @@
         android:padding="@dimen/titlePadding"
         android:text="@string/homeTitle"
         android:textColor="@android:color/background_light"
+        android:textAlignment="center"
+        android:lineSpacingMultiplier="0.6"
+        android:lineSpacingExtra="1dp"
         android:textSize="@dimen/elementTitleFontSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,22 +25,26 @@
 
     <Button
         android:id="@+id/designButton"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:background="@color/colorPrimaryDark"
-        android:padding="@dimen/buttonPadding"
+        android:textColor="@color/colorPrimary"
+        android:drawableRight="@drawable/ic_menu_send"
+        android:drawablePadding="@dimen/btn_drawable_padding"
+        android:paddingLeft="@dimen/btn_paddin_left_right"
+        android:paddingRight="@dimen/btn_paddin_left_right"
         android:text="@string/homeDesignButton"
-        android:textColor="#fff"
+        android:background="#fff"
+        android:textSize="@dimen/btn_font_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="0dp"
-        android:layout_height="300dp"
-        android:padding="@dimen/buttonPadding"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/max_height_img_home"
+        android:adjustViewBounds="true"
         android:src="@drawable/architect_design"
         app:layout_constraintBottom_toTopOf="@+id/designButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,14 +55,17 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:padding="@dimen/textPadding"
+        android:layout_marginTop="@dimen/margin_top_text_view_constraint"
+        android:paddingLeft="@dimen/padding_left_right_text_view"
+        android:paddingRight="@dimen/padding_left_right_text_view"
         android:text="@string/homeDescription"
+        android:textAlignment="center"
         android:textColor="@android:color/background_light"
-        android:textSize="@dimen/homeTextFontSize"
-        android:layout_marginBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

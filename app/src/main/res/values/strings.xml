@@ -2,8 +2,8 @@
     <string name="app_name">Design Materials</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Design Materials</string>
+    <string name="nav_header_subtitle">JAndroid Team</string>
     <string name="nav_header_desc">Navigation header</string>
 
     <!-- Menu Strings -->
@@ -27,8 +27,8 @@
     <string name="settingAppColorsSummary">Change the app theme to the colors you have selected</string>
 
     <!-- HomeFragment Strings -->
-    <string name="homeTitle">Welcome to Design Materials</string>
-    <string name="homeDescription">An app to help you design, other apps.</string>
+    <string name="homeTitle">WELCOME TO \n DESIGN MATERIALS</string>
+    <string name="homeDescription">Pick your color, favourite font and design your app how you want, the way you want</string>
     <string name="homePhotoDescription">Design Photo</string>
     <string name="homeDesignButton">Start Designing</string>
 
