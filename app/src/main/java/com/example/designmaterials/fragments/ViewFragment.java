@@ -3,6 +3,7 @@ package com.example.designmaterials.fragments;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -14,9 +15,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.example.designmaterials.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.chip.Chip;
 
 /**
@@ -119,32 +122,46 @@ public class ViewFragment extends Fragment {
             submit.setTextSize(buttonFontSize);
 
         }else if(layout ==R.layout.layout_view_two){
+            TextView prdTitle=view.findViewById(R.id.prdTitle);
+            TextView amountText=view.findViewById(R.id.amountText);
+            Switch longSleeveSwitch=view.findViewById(R.id.longSleeveSwitch);
+            Button addButton=view.findViewById(R.id.addButton);
+
             Chip smallChip=view.findViewById(R.id.smallChip);
             Chip mediumChip=view.findViewById(R.id.mediumChip);
             Chip largeChip=view.findViewById(R.id.largeChip);
 
             smallChip.setTextColor(Color.WHITE);
-
-//            smallChip.setChipBackgroundColor(getResources().getColorStateList(thePrimaryColorLight));
-
-
-
-            smallChip.setChipBackgroundColor(getResources().getColorStateList(R.color.colorPrimary));
-            mediumChip.setChipBackgroundColor(getResources().getColorStateList(R.color.colorPrimary));
-            largeChip.setChipBackgroundColor(getResources().getColorStateList(R.color.colorPrimary));
-            smallChip.setTextSize(bodyFontsize);
+            smallChip.setChipBackgroundColor(ColorStateList.valueOf(thePrimaryColorLight));
+            mediumChip.setChipBackgroundColor(ColorStateList.valueOf(thePrimaryColor));
+            largeChip.setChipBackgroundColor(ColorStateList.valueOf(thePrimaryColorDark));
+            smallChip.setTextSize(bodyFontsize-5);
 
             mediumChip.setTextColor(Color.WHITE);
-//            smallChip.setChipBackgroundColor(getResources().getColorStateList(thePrimaryColor));
-
             mediumChip.setTypeface(ElementFragment.elementFont(getActivity(), bodyFontName, bodyFontWeight));
-            mediumChip.setTextSize(bodyFontsize);
+            mediumChip.setTextSize(bodyFontsize-2);
 
             largeChip.setTextColor(Color.WHITE);
-//            smallChip.setChipBackgroundColor(getResources().getColorStateList(thePrimaryColorDark));
-
             largeChip.setTypeface(ElementFragment.elementFont(getActivity(), bodyFontName, bodyFontWeight));
-            largeChip.setTextSize(bodyFontsize);
+            largeChip.setTextSize(bodyFontsize+1);
+
+            prdTitle.setTextColor(thePrimaryColor);
+            prdTitle.setTypeface(ElementFragment.elementFont(getActivity(), headingFontName, headingFontWeight));
+            prdTitle.setTextSize(headingsFontsize);
+
+            amountText.setTextColor(theSecondaryColorDark);
+            amountText.setTypeface(ElementFragment.elementFont(getActivity(), bodyFontName, bodyFontWeight));
+            amountText.setTextSize(bodyFontsize);
+
+            longSleeveSwitch.setTextColor(theSecondaryColorDark);
+            longSleeveSwitch.setTypeface(ElementFragment.elementFont(getActivity(), bodyFontName, bodyFontWeight));
+            longSleeveSwitch.setTextSize(bodyFontsize);
+
+            addButton.setTextColor(Color.WHITE);
+            addButton.setBackgroundColor(thePrimaryColor);
+            addButton.setTypeface(ElementFragment.elementFont(getActivity(), buttonFontName, buttonFontWeight));
+            addButton.setTextSize(buttonFontSize);
+
 
         }else if(layout ==R.layout.layout_view_three){
             TextView blogTitle=view.findViewById(R.id.blogTitle);
@@ -228,6 +245,35 @@ public class ViewFragment extends Fragment {
             btn.setBackgroundColor(thePrimaryColor);
             btn.setTypeface(ElementFragment.elementFont(getActivity(), buttonFontName, buttonFontWeight));
             btn.setTextSize(buttonFontSize);
+        }else if(layout==R.layout.layout_view_six){
+            BottomNavigationView bottomNavigationView=view.findViewById(R.id.bottomNav);
+            bottomNavigationView.setBackgroundColor(theSecondaryColorLight);
+            bottomNavigationView.setItemTextColor(ColorStateList.valueOf(Color.WHITE));
+            bottomNavigationView.setItemIconTintList(ColorStateList.valueOf(Color.WHITE));
+            TextView productName=view.findViewById(R.id.productName);
+            TextView productPrice=view.findViewById(R.id.productPrice);
+            TextView productDescription=view.findViewById(R.id.productDescription);
+            Button buyNow=view.findViewById(R.id.buyNow);
+
+
+
+            productName.setTextColor(thePrimaryColor);
+            productName.setTypeface(ElementFragment.elementFont(getActivity(), headingFontName, headingFontWeight));
+            productName.setTextSize(headingsFontsize);
+
+            productPrice.setTextColor(thePrimaryColor);
+            productPrice.setTypeface(ElementFragment.elementFont(getActivity(), headingFontName, headingFontWeight));
+            productPrice.setTextSize(bodyFontsize);
+
+            productDescription.setTextColor(theSecondaryColorDark);
+            productDescription.setTypeface(ElementFragment.elementFont(getActivity(), bodyFontName, bodyFontWeight));
+            productDescription.setTextSize(bodyFontsize);
+
+
+            buyNow.setTextColor(Color.WHITE);
+            buyNow.setBackgroundColor(thePrimaryColor);
+            buyNow.setTypeface(ElementFragment.elementFont(getActivity(), buttonFontName, buttonFontWeight));
+            buyNow.setTextSize(buttonFontSize);
         }
         return view;
     }

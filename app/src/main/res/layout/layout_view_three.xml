@@ -38,8 +38,8 @@
 
             <Button
                 android:id="@+id/btn1"
-                android:paddingLeft="30px"
-                android:paddingRight="30px"
+                android:paddingLeft="45px"
+                android:paddingRight="45px"
                 android:layout_width="wrap_content"
                 android:layout_gravity="right"
                 android:layout_height="wrap_content"

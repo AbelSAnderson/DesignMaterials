@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="100px">
+        <LinearLayout
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50px">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/productName"
+                    android:layout_width="wrap_content"
+                    android:textSize="25dp"
+                    android:textColor="@color/colorPrimary"
+                    android:text="@string/product_title"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/productPrice"
+                    android:textSize="25dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginLeft="60dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$1,049"/>
+            </LinearLayout>
+
+            <ImageView
+                android:maxHeight="250dp"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/iphone11" />
+            <TextView
+                android:id="@+id/productDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_short" />
+            <Button
+                android:id="@+id/buyNow"
+                android:layout_width="wrap_content"
+                android:text="Add to cart"
+                android:paddingLeft="50px"
+                android:paddingRight="50px"
+                android:drawableLeft="@drawable/ic_shopping_cart_black_24dp"
+                android:drawablePadding="20px"
+                android:layout_gravity="right"
+                android:layout_margin="15dp"
+                android:layout_marginBottom="50dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
