@@ -17,7 +17,11 @@
         android:id="@+id/nav_design"
         android:name="com.example.designmaterials.fragments.DesignFragment"
         android:label="Desgin"
-        tools:layout="@layout/fragment_design" />
+        tools:layout="@layout/fragment_design" >
+        <action
+            android:id="@+id/action_nav_design_to_nav_elements"
+            app:destination="@id/nav_elements" />
+    </fragment>
     <fragment
         android:id="@+id/nav_elements"
         android:name="com.example.designmaterials.fragments.ElementsFragment"

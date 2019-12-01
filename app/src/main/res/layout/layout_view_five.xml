@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/parrot"
+    android:orientation="vertical">
+
+   <LinearLayout
+       android:id="@+id/fiveTransparent"
+       android:layout_width="match_parent"
+       android:background="#88000000"
+       android:orientation="vertical"
+       android:layout_height="match_parent">
+       <TextView
+           android:id="@+id/fiveHeading"
+           android:layout_width="match_parent"
+           android:text="@string/text_heading"
+           android:textSize="30dp"
+           android:layout_marginTop="100px"
+           android:textColor="#fff"
+           android:textAlignment="center"
+           android:layout_height="wrap_content"/>
+       <TextView
+           android:id="@+id/fiveBody"
+           android:layout_width="match_parent"
+           android:text="@string/text_long"
+           android:textSize="20dp"
+           android:layout_margin="40px"
+           android:textColor="#fff"
+           android:textAlignment="center"
+           android:layout_height="wrap_content"/>
+       <TextView
+           android:id="@+id/fiveIcon"
+           android:layout_width="match_parent"
+           android:text=":)"
+           android:textSize="60dp"
+           android:textColor="#fff"
+           android:textAlignment="center"
+           android:layout_height="wrap_content"/>
+       <Button
+           android:id="@+id/fiveButton"
+           android:layout_width="wrap_content"
+           android:text="@string/button_text_share"
+           android:textSize="20dp"
+           android:paddingLeft="45px"
+           android:paddingRight="45px"
+           android:layout_gravity="center"
+           android:layout_margin="40px"
+           android:textAlignment="center"
+           android:layout_height="wrap_content"/>
+
+   </LinearLayout>
+</FrameLayout>

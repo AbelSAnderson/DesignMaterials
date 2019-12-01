@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@drawable/homebg"
     android:orientation="vertical"
     tools:context=".fragments.HomeFragment" >
 
@@ -24,9 +24,11 @@
         android:id="@+id/designButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:layout_marginBottom="20dp"
+        android:background="@color/colorPrimaryDark"
         android:padding="@dimen/buttonPadding"
         android:text="@string/homeDesignButton"
+        android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -51,6 +53,7 @@
         android:text="@string/homeDescription"
         android:textColor="@android:color/background_light"
         android:textSize="@dimen/homeTextFontSize"
+        android:layout_marginBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
