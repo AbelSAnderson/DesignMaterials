@@ -51,7 +51,9 @@
     <string name="elementAutoCompleteTextView">The AutoCompleteTextView Lorem ipsum has a lot of characters</string>
     <string name="elementEditText">The Edit text Lorem ipsum has a lot of characters</string>
 
-    <!-- TODO: Create Externalize Strings for Each element we are using -->
+    <string name="elementHeading">Heading Text</string>
+    <string name="elementBody">Body Text</string>
+    <string name="elementButtons">Buttons</string>
 
     <string name="elementFontTitle">Font Family</string>
     <string name="elementRoboto">Roboto</string>
@@ -132,6 +134,11 @@
     <string name="creditAbelTitle">Idea Man</string>
     <string name="creditAbelName">Abel Anderson</string>
     <string name="creditAbelLink">https://github.com/AbelSAnderson</string>
+
+    <string name="creditArchitectImageTitle">Architect Design Image</string>
+    <string name="creditArchitectImageName">Designed by FreePik</string>
+    <string name="creditArchitectImageLinkName">FreePik.com</string>
+    <string name="creditArchitectImageLink">http://www.freepik.com</string>
 
     <!-- Placeholder Strings -->
     <string name="text_heading">The lazy dog jumps happy</string>

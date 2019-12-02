@@ -20,6 +20,7 @@
         android:textAlignment="center"
         android:textColor="#fff" />
 
+
     <Button
         android:id="@+id/phoneButton"
         android:drawableLeft="@drawable/ic_phone_white_24dp"
@@ -58,4 +59,5 @@
         android:text="@string/mapButton"
         android:textAlignment="center"
         android:textColor="#fff" />
+
 </LinearLayout>

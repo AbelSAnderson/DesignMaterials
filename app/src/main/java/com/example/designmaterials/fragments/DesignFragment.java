@@ -14,6 +14,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -72,6 +73,8 @@ public class DesignFragment extends Fragment {
         secondaryColorBtn.setTextColor(Color.WHITE);
 
         Button saveColorsBtn = view.findViewById(R.id.saveColorsBtn);
+
+        saveColorsBtn.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.button_in_right));
 
         final ColorPickerView colorPickerView = view.findViewById(R.id.colorPickerView);
         colorPickerView.setPureColor(Color.BLUE);
