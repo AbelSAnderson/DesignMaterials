@@ -12,8 +12,8 @@
         <action
             android:id="@+id/action_nav_home_to_nav_design"
             app:destination="@id/nav_design"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim" />
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/nav_design"
