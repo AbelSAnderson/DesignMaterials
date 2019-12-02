@@ -5,20 +5,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
+    <TextView
         android:id="@+id/elementName"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="@dimen/largeButtonMargin"
         android:layout_weight="1"
         android:background="@color/colorPrimary"
-        android:drawablePadding="@dimen/btn_drawable_padding"
-        android:padding="@dimen/titlePadding"
-        android:text="@string/homeDesignButton"
+        android:fontFamily="sans-serif-medium"
+        android:padding="@dimen/buttonPadding"
+        android:text="@string/hello_blank_fragment"
+        android:textAlignment="center"
         android:textColor="@color/ic_launcher_background"
-        android:textSize="@dimen/homeTextFontSize"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="@dimen/homeTextFontSize" />
 
 </LinearLayout>
