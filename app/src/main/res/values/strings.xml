@@ -119,6 +119,11 @@
     <string name="creditAbelName">Abel Anderson</string>
     <string name="creditAbelLink">https://github.com/AbelSAnderson</string>
 
+    <string name="creditArchitectImageTitle">Architect Design Image</string>
+    <string name="creditArchitectImageName">Designed by FreePik</string>
+    <string name="creditArchitectImageLinkName">FreePik.com</string>
+    <string name="creditArchitectImageLink">http://www.freepik.com</string>
+
     <!-- Placeholder Strings -->
     <string name="text_heading">The lazy dog jumps happy</string>
     <string name="text_short">Too she being house a even empire team- an as samples we of late person.</string>

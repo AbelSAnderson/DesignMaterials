@@ -30,7 +30,7 @@
     <dimen name="margin_top_text_view_constraint">20dp</dimen>
     <dimen name="padding_left_right_text_view">25dp</dimen>
     <dimen name="max_height_img_home">300dp</dimen>
-    <dimen name="btn_font_size">25dp</dimen>
+    <dimen name="btn_font_size">25sp</dimen>
     <dimen name="btn_paddin_left_right">15dp</dimen>
     <dimen name="btn_drawable_padding">15dp</dimen>
     <dimen name="margin_bottom_view">30dp</dimen>
