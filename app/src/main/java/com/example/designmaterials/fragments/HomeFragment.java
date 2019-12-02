@@ -38,7 +38,7 @@ public class HomeFragment extends Fragment {
         title.setTextSize(32);
 
         desc.setTypeface(roboto);
-        desc.setTextSize(18);
+        desc.setTextSize(17);
 
         view.findViewById(R.id.designButton).setOnClickListener(new View.OnClickListener() {
             @Override

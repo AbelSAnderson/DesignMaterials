@@ -23,6 +23,9 @@
     <string name="settingRgbTitle">Use Rgb values</string>
     <string name="settingRgbSummary">Use Rgb instead of Hex</string>
 
+    <string name="settingJsonTitle">Send me JSON object</string>
+    <string name="settingJsonSummary">Send me a JSON object with selected values</string>
+
     <string name="settingAppColorsTitle">Use Selected Colors</string>
     <string name="settingAppColorsSummary">Change the app theme to the colors you have selected</string>
 
@@ -99,13 +102,24 @@
     <string name="phonePermissionMessage">We need access to your phone in order to make a call.</string>
 
     <string name="emailIntentSubject">Design Colors from the Design Materials App</string>
-    <string name="emailIntentMessageStart">Here are the colors you picked:</string>
-    <string name="emailIntentPrimaryColor">\n\nPrimary Color:&#32;</string>
-    <string name="emailIntentPrimaryColorLight">\nPrimary Color Light:&#32;</string>
-    <string name="emailIntentPrimaryColorDark">\nPrimary Color Dark:&#32;</string>
-    <string name="emailIntentSecondaryColor">\nSecondary Color:&#32;</string>
-    <string name="emailIntentSecondaryColorLight">\nSecondary Color Light:&#32;</string>
-    <string name="emailIntentSecondaryColorDark">\nSecondary Color Dark:&#32;</string>
+    <string name="emailIntentMessageStart">Here are the styles you picked:</string>
+    <string name="emailIntentMessageJson">Because you selected JSON, below is the JSON object:</string>
+    <string name="emailIntentPrimaryColor">\n\nPrimary Color:&#32; </string>
+    <string name="emailIntentPrimaryColorLight">\nPrimary Color Light:&#32; </string>
+    <string name="emailIntentPrimaryColorDark">\nPrimary Color Dark:&#32; </string>
+    <string name="emailIntentSecondaryColor">\nSecondary Color:&#32; </string>
+    <string name="emailIntentSecondaryColorLight">\nSecondary Color Light:&#32; </string>
+    <string name="emailIntentSecondaryColorDark">\nSecondary Color Dark:&#32; </string>
+    <string name="emailIntentHeadingFontName">\nHeading Font Name:&#32; </string>
+    <string name="emailIntentBodyFontName">\nBody Font Name:&#32; </string>
+    <string name="emailIntentButtonFontName">\nButton Font Name:&#32; </string>
+    <string name="emailIntentHeadingFontWeight">\nHeading Font Weight:&#32; </string>
+    <string name="emailIntentBodyFontWeight">\nBody Font Weight:&#32; </string>
+    <string name="emailIntentButtonFontWeight">\nButton Font Weight:&#32; </string>
+    <string name="emailIntentHeadingFontSize">\nHeading Font Size:&#32; </string>
+    <string name="emailIntentBodyFontSize">\nBody Font Size:&#32; </string>
+    <string name="emailIntentButtonFontSize">\nButton Font Size:&#32; </string>
+
     <string name="emailIntentMessageEnd">\n\nThank you for using our app!</string>
 
     <!-- Credits Strings -->

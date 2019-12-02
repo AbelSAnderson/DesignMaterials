@@ -83,22 +83,7 @@ public class ViewFragment extends Fragment {
         int headingsFontsize=sharedPreferences.getInt("headingFontSize",22);
         int bodyFontsize=sharedPreferences.getInt("bodyFontSize",22);
         int buttonFontSize=sharedPreferences.getInt("buttonFontSize",22);
-        System.out.println("---*****--==-=-=+_+_+_+_");
-        System.out.println("thePrimaryColor:"+thePrimaryColor);
-        System.out.println("thePrimaryColorDark:"+thePrimaryColorDark);
-        System.out.println("theSecondaryColor:"+theSecondaryColor);
-        System.out.println("theSecondaryColorLight:"+theSecondaryColorLight);
-        System.out.println("theSecondaryColorDark:"+theSecondaryColorDark);
-        System.out.println("headingFontName:"+headingFontName);
-        System.out.println("bodyFontName:"+bodyFontName);
-        System.out.println("buttonFontName:"+buttonFontName);
-        System.out.println("headingFontWeight:"+headingFontWeight);
-        System.out.println("bodyFontWeight:"+bodyFontWeight);
-        System.out.println("buttonFontWeight:"+buttonFontWeight);
-        System.out.println("headingsFontsize:"+headingsFontsize);
-        System.out.println("bodyFontsize:"+bodyFontsize);
-        System.out.println("buttonFontSize:"+buttonFontSize);
-        System.out.println("%%%%%*****************%%%%");
+
         Typeface fa=Typeface.createFromAsset(getActivity().getAssets(),"fontawesome.ttf");
         // Inflate the layout for this fragment
         View view = inflater.inflate(layout, container, false);

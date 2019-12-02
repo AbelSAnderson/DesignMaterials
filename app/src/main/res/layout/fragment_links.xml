@@ -9,41 +9,53 @@
 
     <Button
         android:id="@+id/textButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:drawableLeft="@drawable/ic_textsms_white_24dp"
         android:layout_margin="@dimen/buttonMargin"
+        android:background="@color/colorPrimary"
         android:padding="@dimen/buttonPadding"
         android:text="@string/textButton"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="#fff" />
 
     <Button
         android:id="@+id/phoneButton"
-        android:layout_width="wrap_content"
+        android:drawableLeft="@drawable/ic_phone_white_24dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="@dimen/buttonMargin"
+        android:background="@color/colorPrimary"
         android:padding="@dimen/buttonPadding"
         android:text="@string/phoneButton"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="#fff" />
 
     <Button
         android:id="@+id/emailButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:drawableLeft="@drawable/ic_email_white_24dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="@dimen/buttonMargin"
+        android:background="@color/colorPrimary"
         android:padding="@dimen/buttonPadding"
         android:text="@string/emailButton"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="#fff" />
 
     <Button
         android:id="@+id/mapButton"
-        android:layout_width="wrap_content"
+        android:drawableLeft="@drawable/ic_location_on_black_24dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="@dimen/buttonMargin"
+        android:background="@color/colorPrimary"
         android:padding="@dimen/buttonPadding"
         android:text="@string/mapButton"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="#fff" />
 </LinearLayout>
