@@ -1,9 +1,11 @@
 #Design Materials
+
 >### "An App to design other apps"
 
 ###**By [Abel Anderson](https://github.com/AbelSAnderson "Abel Anderson") & [Ndricim Strazimiri](https://github.com/nstrazimiri "Ndricim Strazimiri")**
 
 #Intro
+
 - It is an app who helps mobile developers, design their apps
 - It firstly ask your for your primary and secondary color, the app itself then will generate the light and dark version of both colors.
 - Next you have to style three main components of the android: Headings, Body and buttons. For these three, you have to provide font family, font weight and font size.
@@ -12,17 +14,16 @@
 - In the intent section, among other contanct methods, your can choose to email to your self the styles that your choosed.
 - From the menu you can choose if you want px or dp, Hex or RGB, plain text or JSON object.
 
+
 # App Styles
 - Logo designed by the team.
 - Font used: Avenir Bold
 - Colors: #EC010C,#99060D,#720564,#039DC1 which are also colors of the app
 ![](https://nstrazimiri.scweb.ca/android/DMIcon.png)
 
-
 **Table of Contents**
 
 [TOCM]
-
 [TOC]
 
 
@@ -38,13 +39,13 @@
 
 
 #Font Styles
-    | Font Family           | Font Weight                  |
-    | ----------------------| -------------------------- |
-    | Roboto                     | Bold, Regular, Italic  |
-    | Open Sans             | Bold, Regular, Italic  |
-	| Grotesque              | Bold, Regular, Italic  |
-	| Montserrat             | Bold, Regular, Italic  |
-	| Play Fair Display | Bold, Regular, Italic  |
+    |    Font Family         |    Font Weight         |
+    | ---------------------- | ---------------------- |
+    | Roboto                 | Bold, Regular, Italic  |
+    | Open Sans              | Bold, Regular, Italic  |
+    | Grotesque              | Bold, Regular, Italic  |
+    | Montserrat             | Bold, Regular, Italic  |
+    | Play Fair Display      | Bold, Regular, Italic  |
 
 #Screenshoots
 
