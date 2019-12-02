@@ -45,7 +45,11 @@
         android:id="@+id/elementFragment"
         android:name="com.example.designmaterials.fragments.ElementFragment"
         android:label="Element"
-        tools:layout="@layout/fragment_element" />
+        tools:layout="@layout/fragment_element" >
+        <action
+            android:id="@+id/action_elementFragment_to_nav_views"
+            app:destination="@id/nav_views" />
+    </fragment>
     <fragment
         android:id="@+id/nav_links"
         android:name="com.example.designmaterials.fragments.LinksFragment"

@@ -9,7 +9,7 @@
     <!-- Menu Strings -->
     <string name="menu_home">Home</string>
     <string name="menu_design">Design</string>
-    <string name="menu_views">View</string>
+    <string name="menu_views">Views</string>
     <string name="menu_elements">Elements</string>
     <string name="menu_tools">Tools</string>
     <string name="menu_links">Links</string>
@@ -28,15 +28,16 @@
 
     <!-- HomeFragment Strings -->
     <string name="homeTitle">WELCOME TO \n DESIGN MATERIALS</string>
-    <string name="homeDescription">Pick your color, favourite font and design your app how you want, the way you want</string>
+    <string name="homeDescription">Pick your color, favourite font and design your app how you want, the way you want.</string>
     <string name="homePhotoDescription">Design Photo</string>
     <string name="homeDesignButton">Start Designing</string>
+    <string name="leftCurly">{</string>
 
     <!-- DesignFragment Strings -->
     <string name="designTitle">Pick your Color</string>
     <string name="designLightColor">Light Color</string>
     <string name="designDarkColor">Dark Color</string>
-    <string name="designSaveColorsButton">Next</string>
+    <string name="designSaveColorsButton">Elements</string>
 
     <string name="designPrimaryColorDisplayPrimary">Primary</string>
     <string name="designPrimaryColorDisplaySecondary">Secondary</string>

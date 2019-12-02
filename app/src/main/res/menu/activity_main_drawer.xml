@@ -10,7 +10,7 @@
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_design"
-            android:icon="@drawable/ic_create_black_24dp"
+            android:icon="@drawable/pencil_ruler_solid"
             android:title="@string/menu_design" />
         <item
             android:id="@+id/nav_views"

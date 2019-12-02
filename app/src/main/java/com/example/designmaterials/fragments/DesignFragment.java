@@ -3,8 +3,10 @@ package com.example.designmaterials.fragments;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
 
 import androidx.navigation.Navigation;
@@ -73,6 +75,8 @@ public class DesignFragment extends Fragment {
 
         final ColorPickerView colorPickerView = view.findViewById(R.id.colorPickerView);
         colorPickerView.setPureColor(Color.BLUE);
+
+
 
 
         colorPickerView.setColorListener(new ColorListener() {
@@ -148,9 +152,6 @@ public class DesignFragment extends Fragment {
                 editor.putInt("secondaryColorDark", theSecondaryColorDark);
                 editor.putInt("secondaryColorLight", theSecondaryColorLight);
                 editor.apply();
-
-                Toast toast = Toast.makeText(getContext(), getString(R.string.designColorSavedMessage), Toast.LENGTH_LONG);
-                toast.show();
 
                 Navigation.findNavController(view).navigate(R.id.action_nav_design_to_nav_elements);
             }

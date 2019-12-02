@@ -182,9 +182,9 @@ public class ViewFragment extends Fragment {
             btn1.setTypeface(ElementFragment.elementFont(getActivity(), buttonFontName, buttonFontWeight));
             btn1.setTextSize(buttonFontSize);
         }else if(layout ==R.layout.layout_view_four){
-            int[] loveIds = new int[]{R.id.heart1, R.id.heart2, R.id.heart3, R.id.heart4};
-            int[] saveIds = new int[]{R.id.save1, R.id.save2, R.id.save3, R.id.save4};
-            int[] shareIds = new int[]{R.id.share1, R.id.share2, R.id.share3, R.id.share4};
+            int[] loveIds = new int[]{R.id.heart1, R.id.heart3};
+            int[] saveIds = new int[]{R.id.save1, R.id.save3};
+            int[] shareIds = new int[]{R.id.share1, R.id.share3};
             final TextView[] arraylove = new TextView[loveIds.length];
             final TextView[] arraysave = new TextView[saveIds.length];
             final TextView[] arrayshare = new TextView[shareIds.length];
