@@ -50,7 +50,7 @@
 
 
 ## Color Picker Screen
-![](https://nstrazimiri.scweb.ca/android/screen2.png)
+![](https://nstrazimiri.scweb.ca/android/screen2_2.png)
 
 
 ## Font styles selection screen
