@@ -12,7 +12,7 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/buttonMargin"
+        android:layout_marginBottom="@dimen/buttonMargin"
         android:text="@string/designTitle"
         android:textAlignment="center"
         android:textSize="@dimen/designTitleFontSize" />
@@ -20,7 +20,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/buttonMargin"
+        android:layout_marginBottom="@dimen/buttonMargin"
         android:orientation="vertical">
 
         <Button
@@ -64,7 +64,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/buttonMargin"
+        android:layout_marginBottom="@dimen/buttonMargin"
         android:orientation="horizontal">
 
         <com.skydoves.colorpickerview.ColorPickerView
@@ -81,7 +81,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/buttonMargin"
+        android:layout_marginBottom="@dimen/buttonMargin"
         android:layout_marginTop="@dimen/designLayoutMarginTop"
         android:orientation="horizontal">
 
