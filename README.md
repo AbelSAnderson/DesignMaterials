@@ -21,10 +21,6 @@
 - Colors: #EC010C,#99060D,#720564,#039DC1 which are also colors of the app
 ![](https://nstrazimiri.scweb.ca/android/DMIcon.png)
 
-**Table of Contents**
-
-[TOCM]
-[TOC]
 
 
 # Using 3rd party libraries
@@ -49,19 +45,24 @@
 
 # Screenshoots
 
->Home Screen
+## Home Screen
 ![](https://nstrazimiri.scweb.ca/android/screen1.png)
 
->Color Picker Screen
+
+## Color Picker Screen
 ![](https://nstrazimiri.scweb.ca/android/screen2.png)
 
->Font styles selection screen
+
+## Font styles selection screen
 ![](https://nstrazimiri.scweb.ca/android/screen3.png)
 
->Navigation Drawer Preview with logo included
+
+## Navigation Drawer Preview with logo included
 ![](https://nstrazimiri.scweb.ca/android/screen4.png)
 
->Views Screen with a sample
+
+## Views Screen with a sample
 ![](https://nstrazimiri.scweb.ca/android/screen5.png)
+
 
 &copy; 2019
