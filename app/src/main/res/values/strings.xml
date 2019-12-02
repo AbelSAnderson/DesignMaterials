@@ -48,7 +48,9 @@
     <string name="elementAutoCompleteTextView">The AutoCompleteTextView Lorem ipsum has a lot of characters</string>
     <string name="elementEditText">The Edit text Lorem ipsum has a lot of characters</string>
 
-    <!-- TODO: Create Externalize Strings for Each element we are using -->
+    <string name="elementHeading">Heading Text</string>
+    <string name="elementBody">Body Text</string>
+    <string name="elementButtons">Buttons</string>
 
     <string name="elementFontTitle">Font Family</string>
     <string name="elementRoboto">Roboto</string>
