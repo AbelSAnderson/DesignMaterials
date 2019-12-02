@@ -34,12 +34,15 @@ public class DesignFragment extends Fragment {
     private Button primaryColorBtn;
     private Button secondaryColorBtn;
 
-    private static int thePrimaryColor = Color.rgb(198, 40, 40);
-    private static int thePrimaryColorLight = lighter(thePrimaryColor);
-    private static int thePrimaryColorDark = darker(thePrimaryColor);
-    private static int theSecondaryColor = Color.rgb(27, 94, 32);
-    private static int theSecondaryColorLight = lighter(theSecondaryColor);
-    private static int theSecondaryColorDark = darker(theSecondaryColor);
+     SharedPreferences sharedPreferences;
+
+    int thePrimaryColor;
+    int theSecondaryColor;
+    int thePrimaryColorLight;
+    int thePrimaryColorDark;
+    int theSecondaryColorLight;
+    int theSecondaryColorDark;
+
     private static String activeBtn = "primary";
 
     public DesignFragment() {
@@ -50,6 +53,16 @@ public class DesignFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
+         thePrimaryColor=sharedPreferences.getInt("primaryColor",Color.rgb(198, 40, 40));
+         theSecondaryColor=sharedPreferences.getInt("secondaryColor",Color.rgb(27, 94, 32));
+
+
+           thePrimaryColorLight = lighter(thePrimaryColor);
+           thePrimaryColorDark = darker(thePrimaryColor);
+           theSecondaryColorLight = lighter(theSecondaryColor);
+           theSecondaryColorDark = darker(theSecondaryColor);
+
         View view = inflater.inflate(R.layout.fragment_design, container, false);
 
         primaryColorDisplay = view.findViewById(R.id.primaryColor);
@@ -146,7 +159,6 @@ public class DesignFragment extends Fragment {
         saveColorsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putInt("primaryColor", thePrimaryColor);
                 editor.putInt("primaryColorDark", thePrimaryColorDark);
