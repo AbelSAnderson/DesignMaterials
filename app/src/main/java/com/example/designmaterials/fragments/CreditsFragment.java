@@ -41,6 +41,10 @@ public class CreditsFragment extends Fragment {
         attributions.add(new Attribution(getString(R.string.creditNdricimTitle), getString(R.string.creditNdricimName), getString(R.string.creditGithubLinkName), getString(R.string.creditNdricimLink)));
         attributions.add(new Attribution(getString(R.string.creditAbelTitle), getString(R.string.creditAbelName), getString(R.string.creditGithubLinkName), getString(R.string.creditAbelLink)));
         attributions.add(new Attribution(getString(R.string.creditArchitectImageTitle), getString(R.string.creditArchitectImageName), getString(R.string.creditArchitectImageLinkName), getString(R.string.creditArchitectImageLink)));
+        attributions.add(new Attribution(getString(R.string.creditImagesBy), getString(R.string.creditPexelsCopyright), getString(R.string.creditPexelsName), getString(R.string.creditArchitectImageLinkName)));
+        attributions.add(new Attribution(getString(R.string.creditColorPickerLibrary), getString(R.string.creditColorPickerName), getString(R.string.creditColorPickerBy), getString(R.string.creditColorPickerUrl)));
+        attributions.add(new Attribution(getString(R.string.creditSeekBarLibrary), getString(R.string.creditSeekBarName), getString(R.string.creditSeekBarBy), getString(R.string.creditSeekBarUrl)));
+        attributions.add(new Attribution(getString(R.string.creditFontAwesomeLibrary), getString(R.string.creditFontAwesomeName), getString(R.string.creditFontAwesomeBy), getString(R.string.creditFontAwesomeUrl)));
 
         ListView listView = view.findViewById(R.id.creditListView);
         listView.setAdapter(new creditListViewAdapter(getContext(), attributions));
