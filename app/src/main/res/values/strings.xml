@@ -66,6 +66,8 @@
 
     <string name="elementFontSizeTitle">Font Size</string>
 
+    <string name="elementSaveButton">Save</string>
+
     <!-- LayoutViews Strings -->
     <string name="layoutViewOneTitle">Login</string>
     <string name="layoutViewOneEmail">Email</string>

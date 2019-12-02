@@ -166,19 +166,20 @@
                 app:dsb_min="12"
                 app:dsb_value="22" />
         </LinearLayout>
+
         <Button
             android:id="@+id/saveFont"
-            android:text="Save"
-            android:textSize="@dimen/btn_font_size"
-            android:textColor="#fff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
             android:background="@color/colorPrimary"
+            android:drawableEnd="@drawable/ic_save_black_24dp"
+            android:drawablePadding="@dimen/btn_drawable_padding"
             android:paddingLeft="@dimen/btn_paddin_left_right"
             android:paddingRight="@dimen/btn_paddin_left_right"
-            android:drawableRight="@drawable/ic_save_black_24dp"
-            android:drawablePadding="@dimen/btn_drawable_padding"
-            android:layout_gravity="right"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:text="@string/elementSaveButton"
+            android:textColor="#fff"
+            android:textSize="@dimen/btn_font_size" />
     </LinearLayout>
 
 
