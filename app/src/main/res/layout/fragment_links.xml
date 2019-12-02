@@ -9,41 +9,86 @@
 
     <Button
         android:id="@+id/textButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="@dimen/buttonMargin"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:drawableLeft="@drawable/ic_textsms_white_24dp"
         android:padding="@dimen/buttonPadding"
         android:text="@string/textButton"
-        android:textAlignment="center" />
-
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="@dimen/links_btn_size" />
     <Button
         android:id="@+id/phoneButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="@dimen/buttonMargin"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:drawableLeft="@drawable/ic_phone_white_24dp"
         android:padding="@dimen/buttonPadding"
         android:text="@string/phoneButton"
-        android:textAlignment="center" />
-
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="@dimen/links_btn_size" />
     <Button
         android:id="@+id/emailButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="@dimen/buttonMargin"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:drawableLeft="@drawable/ic_email_white_24dp"
         android:padding="@dimen/buttonPadding"
         android:text="@string/emailButton"
-        android:textAlignment="center" />
-
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="@dimen/links_btn_size" />
     <Button
         android:id="@+id/mapButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="@dimen/buttonMargin"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:drawableLeft="@drawable/ic_location_on_black_24dp"
         android:padding="@dimen/buttonPadding"
         android:text="@string/mapButton"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="@dimen/links_btn_size" />
+    <Button
+        android:id="@+id/facebookButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:drawableLeft="@drawable/ic_facebook_square_brands"
+        android:padding="@dimen/buttonPadding"
+        android:text="@string/share_on_facebook"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="@dimen/links_btn_size" />
+    <Button
+        android:id="@+id/tweeterButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:drawableLeft="@drawable/twitter_square"
+        android:padding="@dimen/buttonPadding"
+        android:text="@string/twitt_this_app"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="@dimen/links_btn_size" />
 </LinearLayout>

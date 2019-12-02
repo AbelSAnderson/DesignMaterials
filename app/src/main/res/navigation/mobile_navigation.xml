@@ -11,7 +11,9 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_nav_home_to_nav_design"
-            app:destination="@id/nav_design" />
+            app:destination="@id/nav_design"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/nav_design"
@@ -20,7 +22,9 @@
         tools:layout="@layout/fragment_design" >
         <action
             android:id="@+id/action_nav_design_to_nav_elements"
-            app:destination="@id/nav_elements" />
+            app:destination="@id/nav_elements"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/nav_elements"
@@ -29,7 +33,9 @@
         tools:layout="@layout/fragment_elements" >
         <action
             android:id="@+id/action_nav_elements_to_elementFragment"
-            app:destination="@id/elementFragment" />
+            app:destination="@id/elementFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/nav_views"
@@ -45,7 +51,13 @@
         android:id="@+id/elementFragment"
         android:name="com.example.designmaterials.fragments.ElementFragment"
         android:label="Element"
-        tools:layout="@layout/fragment_element" />
+        tools:layout="@layout/fragment_element" >
+        <action
+            android:id="@+id/action_elementFragment_to_nav_views"
+            app:destination="@id/nav_views"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
     <fragment
         android:id="@+id/nav_links"
         android:name="com.example.designmaterials.fragments.LinksFragment"

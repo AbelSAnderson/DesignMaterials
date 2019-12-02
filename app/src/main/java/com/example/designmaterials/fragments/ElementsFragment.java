@@ -8,37 +8,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
-import android.view.SurfaceView;
-import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.CalendarView;
-import android.widget.CheckBox;
-import android.widget.CheckedTextView;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.MultiAutoCompleteTextView;
-import android.widget.ProgressBar;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.RatingBar;
-import android.widget.SearchView;
-import android.widget.SeekBar;
-import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.ToggleButton;
-import android.widget.VideoView;
 
 import com.example.designmaterials.ElementRecycleViewAdapter;
 import com.example.designmaterials.R;
 import com.example.designmaterials.javabeans.Element;
-import com.google.android.material.chip.ChipGroup;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
 
@@ -61,8 +38,8 @@ public class ElementsFragment extends Fragment {
 
         //TODO: Externalize These text elements on when we finish thinning them out
         //Text Elements
-        elements.add(new Element("Heading", new TextView(getContext()), "title"));
-        elements.add(new Element("Body", new TextView(getContext()), "body"));
+        elements.add(new Element(getString(R.string.elementHeading), new TextView(getContext()), "title"));
+        elements.add(new Element(getString(R.string.elementBody), new TextView(getContext()), "body"));
 //        elements.add(new Element("Plain Text", new EditText(getContext())));
 //        elements.add(new Element("AutoCompleteTextView", new AutoCompleteTextView(getContext())));
 //        elements.add(new Element("MultiAutoCompleteTextView", new MultiAutoCompleteTextView(getContext())));
@@ -70,7 +47,7 @@ public class ElementsFragment extends Fragment {
 //        elements.add(new Element("TextInputLayout", new TextInputLayout(getContext())));
 
         //Buttons
-        elements.add(new Element("Button", new Button(getContext()), "button"));
+        elements.add(new Element(getString(R.string.elementButtons), new Button(getContext()), "button"));
 //        elements.add(new Element("ImageButton", new ImageButton(getContext())));
 //        elements.add(new Element("ChipGroup", new ChipGroup(getContext())));
 

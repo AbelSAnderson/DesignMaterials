@@ -83,22 +83,7 @@ public class ViewFragment extends Fragment {
         int headingsFontsize=sharedPreferences.getInt("headingFontSize",22);
         int bodyFontsize=sharedPreferences.getInt("bodyFontSize",22);
         int buttonFontSize=sharedPreferences.getInt("buttonFontSize",22);
-        System.out.println("---*****--==-=-=+_+_+_+_");
-        System.out.println("thePrimaryColor:"+thePrimaryColor);
-        System.out.println("thePrimaryColorDark:"+thePrimaryColorDark);
-        System.out.println("theSecondaryColor:"+theSecondaryColor);
-        System.out.println("theSecondaryColorLight:"+theSecondaryColorLight);
-        System.out.println("theSecondaryColorDark:"+theSecondaryColorDark);
-        System.out.println("headingFontName:"+headingFontName);
-        System.out.println("bodyFontName:"+bodyFontName);
-        System.out.println("buttonFontName:"+buttonFontName);
-        System.out.println("headingFontWeight:"+headingFontWeight);
-        System.out.println("bodyFontWeight:"+bodyFontWeight);
-        System.out.println("buttonFontWeight:"+buttonFontWeight);
-        System.out.println("headingsFontsize:"+headingsFontsize);
-        System.out.println("bodyFontsize:"+bodyFontsize);
-        System.out.println("buttonFontSize:"+buttonFontSize);
-        System.out.println("%%%%%*****************%%%%");
+
         Typeface fa=Typeface.createFromAsset(getActivity().getAssets(),"fontawesome.ttf");
         // Inflate the layout for this fragment
         View view = inflater.inflate(layout, container, false);
@@ -182,9 +167,9 @@ public class ViewFragment extends Fragment {
             btn1.setTypeface(ElementFragment.elementFont(getActivity(), buttonFontName, buttonFontWeight));
             btn1.setTextSize(buttonFontSize);
         }else if(layout ==R.layout.layout_view_four){
-            int[] loveIds = new int[]{R.id.heart1, R.id.heart2, R.id.heart3, R.id.heart4};
-            int[] saveIds = new int[]{R.id.save1, R.id.save2, R.id.save3, R.id.save4};
-            int[] shareIds = new int[]{R.id.share1, R.id.share2, R.id.share3, R.id.share4};
+            int[] loveIds = new int[]{R.id.heart1, R.id.heart3};
+            int[] saveIds = new int[]{R.id.save1, R.id.save3};
+            int[] shareIds = new int[]{R.id.share1, R.id.share3};
             final TextView[] arraylove = new TextView[loveIds.length];
             final TextView[] arraysave = new TextView[saveIds.length];
             final TextView[] arrayshare = new TextView[shareIds.length];

@@ -13,8 +13,9 @@
         android:summary="@string/settingRgbSummary"
         android:title="@string/settingRgbTitle" />
     <!-- Use Colors on App -->
-    <SwitchPreference
-        android:key="colorChoice"
-        android:summary="@string/settingAppColorsSummary"
-        android:title="@string/settingAppColorsTitle" />
+    <CheckBoxPreference
+        android:checked="false"
+        android:key="jsonValue"
+        android:summary="@string/settingJsonSummary"
+        android:title="@string/settingJsonTitle" />
 </PreferenceScreen>
