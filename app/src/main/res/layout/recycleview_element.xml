@@ -11,6 +11,8 @@
         android:layout_height="0dp"
         android:layout_margin="@dimen/buttonMarginMedium"
         android:layout_weight="1"
+        android:drawableEnd="@drawable/ic_menu_send"
+        android:drawablePadding="@dimen/buttonPadding"
         android:fontFamily="sans-serif-medium"
         android:padding="@dimen/buttonPadding"
         android:text="@string/hello_blank_fragment"

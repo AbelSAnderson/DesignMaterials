@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -79,7 +80,11 @@ public class ElementsFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new ElementRecycleViewAdapter(elements));
 
-        view.findViewById(R.id.viewsButton).setOnClickListener(new View.OnClickListener() {
+        Button viewButton = view.findViewById(R.id.viewsButton);
+
+        viewButton.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.button_in_right));
+
+        viewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_nav_elements_to_nav_views);
