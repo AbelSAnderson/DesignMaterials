@@ -35,4 +35,5 @@
     <dimen name="btn_paddin_left_right">15dp</dimen>
     <dimen name="btn_drawable_padding">15dp</dimen>
     <dimen name="margin_bottom_view">30dp</dimen>
+    <dimen name="links_btn_size">18sp</dimen>
 </resources>

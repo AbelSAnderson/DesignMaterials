@@ -103,6 +103,25 @@ public class LinksFragment extends Fragment {
                 }
             }
         });
+        view.findViewById(R.id.tweeterButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "https://twitter.com/intent/tweet?text="+getString(R.string.share_text)+"&url="+getString(R.string.share_url);
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
+
+        view.findViewById(R.id.facebookButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "https://www.facebook.com/sharer/sharer.php?u="+getString(R.string.share_url)+"&m="+getString(R.string.share_text);
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
 
         view.findViewById(R.id.emailButton).setOnClickListener(new View.OnClickListener() {
             @Override

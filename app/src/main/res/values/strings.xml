@@ -151,4 +151,9 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="product_title">iPhone 11</string>
+    <string name="twitt_this_app">Tweet about this App</string>
+    <string name="share_on_facebook">Share on Facebook</string>
+    <string name="share_message">Share on Facebook</string>
+    <string name="share_url">https://www.jandroidteam.ca</string>
+    <string name="share_text">Check out this message who helps you build amazing apps.</string>
 </resources>
