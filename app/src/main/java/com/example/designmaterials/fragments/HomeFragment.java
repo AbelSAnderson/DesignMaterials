@@ -39,7 +39,7 @@ public class HomeFragment extends Fragment {
         title.setTextSize(32);
 
         desc.setTypeface(roboto);
-        desc.setTextSize(18);
+        desc.setTextSize(17);
 
         Button designButton = view.findViewById(R.id.designButton);
 

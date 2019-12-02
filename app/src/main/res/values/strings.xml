@@ -23,6 +23,9 @@
     <string name="settingRgbTitle">Use Rgb values</string>
     <string name="settingRgbSummary">Use Rgb instead of Hex</string>
 
+    <string name="settingJsonTitle">Send me JSON object</string>
+    <string name="settingJsonSummary">Send me a JSON object with selected values</string>
+
     <string name="settingAppColorsTitle">Use Selected Colors</string>
     <string name="settingAppColorsSummary">Change the app theme to the colors you have selected</string>
 
@@ -103,13 +106,24 @@
     <string name="phonePermissionMessage">We need access to your phone in order to make a call.</string>
 
     <string name="emailIntentSubject">Design Colors from the Design Materials App</string>
-    <string name="emailIntentMessageStart">Here are the colors you picked:</string>
-    <string name="emailIntentPrimaryColor">\n\nPrimary Color:&#32;</string>
-    <string name="emailIntentPrimaryColorLight">\nPrimary Color Light:&#32;</string>
-    <string name="emailIntentPrimaryColorDark">\nPrimary Color Dark:&#32;</string>
-    <string name="emailIntentSecondaryColor">\nSecondary Color:&#32;</string>
-    <string name="emailIntentSecondaryColorLight">\nSecondary Color Light:&#32;</string>
-    <string name="emailIntentSecondaryColorDark">\nSecondary Color Dark:&#32;</string>
+    <string name="emailIntentMessageStart">Here are the styles you picked:</string>
+    <string name="emailIntentMessageJson">Because you selected JSON, below is the JSON object:</string>
+    <string name="emailIntentPrimaryColor">\n\nPrimary Color:&#32; </string>
+    <string name="emailIntentPrimaryColorLight">\nPrimary Color Light:&#32; </string>
+    <string name="emailIntentPrimaryColorDark">\nPrimary Color Dark:&#32; </string>
+    <string name="emailIntentSecondaryColor">\nSecondary Color:&#32; </string>
+    <string name="emailIntentSecondaryColorLight">\nSecondary Color Light:&#32; </string>
+    <string name="emailIntentSecondaryColorDark">\nSecondary Color Dark:&#32; </string>
+    <string name="emailIntentHeadingFontName">\nHeading Font Name:&#32; </string>
+    <string name="emailIntentBodyFontName">\nBody Font Name:&#32; </string>
+    <string name="emailIntentButtonFontName">\nButton Font Name:&#32; </string>
+    <string name="emailIntentHeadingFontWeight">\nHeading Font Weight:&#32; </string>
+    <string name="emailIntentBodyFontWeight">\nBody Font Weight:&#32; </string>
+    <string name="emailIntentButtonFontWeight">\nButton Font Weight:&#32; </string>
+    <string name="emailIntentHeadingFontSize">\nHeading Font Size:&#32; </string>
+    <string name="emailIntentBodyFontSize">\nBody Font Size:&#32; </string>
+    <string name="emailIntentButtonFontSize">\nButton Font Size:&#32; </string>
+
     <string name="emailIntentMessageEnd">\n\nThank you for using our app!</string>
 
     <!-- Credits Strings -->
@@ -126,7 +140,29 @@
     <string name="creditArchitectImageTitle">Architect Design Image</string>
     <string name="creditArchitectImageName">Designed by FreePik</string>
     <string name="creditArchitectImageLinkName">FreePik.com</string>
-    <string name="creditArchitectImageLink">http://www.freepik.com</string>
+    <string name="creditArchitectImageLink">https://www.freepik.com</string>
+
+
+
+    <string name="creditImagesBy">Images by</string>
+    <string name="creditPexelsCopyright">Copyright Free by</string>
+    <string name="creditPexelsName">Pexels</string>
+    <string name="creditPexelsUrl">https://www.pexels.com</string>
+
+    <string name="creditColorPickerLibrary">Color Picker Library</string>
+    <string name="creditColorPickerName">Color Picker</string>
+    <string name="creditColorPickerBy">skydoves</string>
+    <string name="creditColorPickerUrl">https://www.github.com/skydoves/ColorPickerView</string>
+
+    <string name="creditSeekBarLibrary">Discrete SeekBar Library</string>
+    <string name="creditSeekBarName">Discrete SeekBar</string>
+    <string name="creditSeekBarBy">AnderWeb</string>
+    <string name="creditSeekBarUrl">https://www.github.com/AnderWeb/discreteSeekBar</string>
+
+    <string name="creditFontAwesomeLibrary">Icons By</string>
+    <string name="creditFontAwesomeName">Font Awesome</string>
+    <string name="creditFontAwesomeBy">Industry Standart Icons</string>
+    <string name="creditFontAwesomeUrl">https://www.fontawesome.com</string>
 
     <!-- Placeholder Strings -->
     <string name="text_heading">The lazy dog jumps happy</string>
@@ -139,4 +175,9 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="product_title">iPhone 11</string>
+    <string name="twitt_this_app">Tweet about this App</string>
+    <string name="share_on_facebook">Share on Facebook</string>
+    <string name="share_message">Share on Facebook</string>
+    <string name="share_url">https://www.jandroidteam.ca</string>
+    <string name="share_text">Check out this message who helps you build amazing apps.</string>
 </resources>
