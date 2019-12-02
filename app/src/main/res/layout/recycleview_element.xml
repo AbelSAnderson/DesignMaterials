@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/elementName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/titlePadding"
-        android:textAlignment="textStart"
-        android:textSize="24sp" />
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/buttonMarginMedium"
+        android:layout_weight="1"
+        android:drawableEnd="@drawable/ic_menu_send"
+        android:drawablePadding="@dimen/buttonPadding"
+        android:fontFamily="sans-serif-medium"
+        android:padding="@dimen/buttonPadding"
+        android:text="@string/hello_blank_fragment"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/homeTextFontSize" />
 
 </LinearLayout>

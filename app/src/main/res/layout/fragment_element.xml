@@ -51,7 +51,6 @@
                 android:layout_weight="1"
                 android:tag="roboto"
                 android:text="@string/elementRoboto" />
-
             <Button
                 android:id="@+id/opensans"
                 style="?android:attr/buttonBarButtonStyle"
@@ -61,7 +60,6 @@
                 android:layout_weight="1"
                 android:tag="opensans"
                 android:text="@string/elementOpenSans" />
-
             <Button
                 android:id="@+id/montserrat"
                 style="?android:attr/buttonBarButtonStyle"
@@ -72,14 +70,12 @@
                 android:tag="montserrat"
                 android:text="@string/elementMontserrat" />
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingLeft="@dimen/elementLinearLayoutPadding"
             android:paddingRight="@dimen/elementLinearLayoutPadding">
-
             <Button
                 android:id="@+id/playfairdisplay"
                 style="?android:attr/buttonBarButtonStyle"
@@ -89,7 +85,6 @@
                 android:layout_weight="1"
                 android:tag="playfairdisplay"
                 android:text="@string/elementPlayfairDisplay" />
-
             <Button
                 android:id="@+id/grotesque"
                 style="?android:attr/buttonBarButtonStyle"
@@ -100,7 +95,6 @@
                 android:tag="grotesque"
                 android:text="@string/elementDarkerGrotesque" />
         </LinearLayout>
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -109,15 +103,18 @@
             android:textAlignment="center"
             android:textColor="#000"
             android:textSize="@dimen/elementTitleFontSize" />
-
         <LinearLayout
-            android:id="@+id/fontWeightGroup"
+            android:id="@+id/fontWeightGroupContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingLeft="@dimen/elementLinearLayoutPadding"
             android:paddingRight="@dimen/elementLinearLayoutPadding">
-
+            <RadioGroup
+                android:id="@+id/fontWeightGroup"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
             <RadioButton
                 android:id="@+id/bold"
                 android:layout_width="wrap_content"
@@ -125,6 +122,14 @@
                 android:layout_weight="1"
                 android:tag="bold"
                 android:text="@string/elementFontWeightBold" />
+                <RadioButton
+                    android:id="@+id/regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:tag="regular"
+                    android:text="@string/elementFontWeightRegular" />
 
             <RadioButton
                 android:id="@+id/light"
@@ -134,14 +139,8 @@
                 android:tag="light"
                 android:text="@string/elementFontWeightLight" />
 
-            <RadioButton
-                android:id="@+id/regular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:checked="true"
-                android:tag="regular"
-                android:text="@string/elementFontWeightRegular" />
+
+            </RadioGroup>
 
         </LinearLayout>
 
@@ -167,6 +166,20 @@
                 app:dsb_min="12"
                 app:dsb_value="22" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/saveFont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="@color/colorPrimary"
+            android:drawableEnd="@drawable/ic_save_black_24dp"
+            android:drawablePadding="@dimen/btn_drawable_padding"
+            android:paddingLeft="@dimen/btn_paddin_left_right"
+            android:paddingRight="@dimen/btn_paddin_left_right"
+            android:text="@string/elementSaveButton"
+            android:textColor="#fff"
+            android:textSize="@dimen/btn_font_size" />
     </LinearLayout>
 
 

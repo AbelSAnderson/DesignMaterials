@@ -3,13 +3,18 @@ package com.example.designmaterials.fragments;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
+
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -29,12 +34,15 @@ public class DesignFragment extends Fragment {
     private Button primaryColorBtn;
     private Button secondaryColorBtn;
 
-    private static int thePrimaryColor = Color.rgb(198, 40, 40);
-    private static int thePrimaryColorLight = lighter(thePrimaryColor);
-    private static int thePrimaryColorDark = darker(thePrimaryColor);
-    private static int theSecondaryColor = Color.rgb(27, 94, 32);
-    private static int theSecondaryColorLight = lighter(theSecondaryColor);
-    private static int theSecondaryColorDark = darker(theSecondaryColor);
+     SharedPreferences sharedPreferences;
+
+    int thePrimaryColor;
+    int theSecondaryColor;
+    int thePrimaryColorLight;
+    int thePrimaryColorDark;
+    int theSecondaryColorLight;
+    int theSecondaryColorDark;
+
     private static String activeBtn = "primary";
 
     public DesignFragment() {
@@ -45,6 +53,16 @@ public class DesignFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
+         thePrimaryColor=sharedPreferences.getInt("primaryColor",Color.rgb(198, 40, 40));
+         theSecondaryColor=sharedPreferences.getInt("secondaryColor",Color.rgb(27, 94, 32));
+
+
+           thePrimaryColorLight = lighter(thePrimaryColor);
+           thePrimaryColorDark = darker(thePrimaryColor);
+           theSecondaryColorLight = lighter(theSecondaryColor);
+           theSecondaryColorDark = darker(theSecondaryColor);
+
         View view = inflater.inflate(R.layout.fragment_design, container, false);
 
         primaryColorDisplay = view.findViewById(R.id.primaryColor);
@@ -69,12 +87,18 @@ public class DesignFragment extends Fragment {
 
         Button saveColorsBtn = view.findViewById(R.id.saveColorsBtn);
 
-        ColorPickerView colorPickerView = view.findViewById(R.id.colorPickerView);
-        colorPickerView.setPureColor(Color.RED);
+        saveColorsBtn.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.button_in_right));
+
+        final ColorPickerView colorPickerView = view.findViewById(R.id.colorPickerView);
+        colorPickerView.setPureColor(Color.BLUE);
+
+
+
 
         colorPickerView.setColorListener(new ColorListener() {
             @Override
             public void onColorSelected(int color, boolean fromUser) {
+                colorPickerView.setPureColor(Color.BLUE);
 
                 if (activeBtn.equals("primary")) {
                     //check if default color is white, if so, don't get it.
@@ -92,10 +116,12 @@ public class DesignFragment extends Fragment {
                     thePrimaryColorLight = lighter(thePrimaryColor);
                     lightColor.setBackgroundColor(thePrimaryColorLight);
 
-                } else {
-                    if (color != -65538) {
-                        theSecondaryColor = color;
+                }else{
+                    if(color!=-65538){
+                        theSecondaryColor=color;
                     }
+
+
 
                     primaryColorDisplay.setBackgroundColor(theSecondaryColor);
                     secondaryColorBtn.setBackgroundColor(theSecondaryColor);
@@ -133,7 +159,6 @@ public class DesignFragment extends Fragment {
         saveColorsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putInt("primaryColor", thePrimaryColor);
                 editor.putInt("primaryColorDark", thePrimaryColorDark);
@@ -143,8 +168,7 @@ public class DesignFragment extends Fragment {
                 editor.putInt("secondaryColorLight", theSecondaryColorLight);
                 editor.apply();
 
-                Toast toast = Toast.makeText(getContext(), getString(R.string.designColorSavedMessage), Toast.LENGTH_LONG);
-                toast.show();
+                Navigation.findNavController(view).navigate(R.id.action_nav_design_to_nav_elements);
             }
         });
 

@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/Title"
+        android:id="@+id/prdTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/layoutViewTwoTitle"
@@ -24,8 +24,8 @@
         app:layout_constraintBottom_toTopOf="@+id/chipGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Title"
-        app:srcCompat="@drawable/shirt" />
+        app:layout_constraintTop_toBottomOf="@+id/prdTitle"
+        app:srcCompat="@drawable/tshirt" />
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chipGroup"
@@ -97,6 +97,8 @@
         android:id="@+id/addButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingLeft="50px"
+        android:paddingRight="50px"
         android:text="@string/layoutViewTwoAddToCart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

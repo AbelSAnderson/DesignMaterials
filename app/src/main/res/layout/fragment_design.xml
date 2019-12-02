@@ -12,6 +12,7 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/buttonMargin"
         android:text="@string/designTitle"
         android:textAlignment="center"
         android:textSize="@dimen/designTitleFontSize" />
@@ -19,61 +20,68 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/buttonMargin"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/primaryColor"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="@dimen/buttonPadding"
+            android:text="@string/designPrimaryColorDisplayPrimary"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/lightColor"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/designLightColor"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/darkColor"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/designDarkColor"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/buttonMargin"
         android:orientation="horizontal">
 
         <com.skydoves.colorpickerview.ColorPickerView
             android:id="@+id/colorPickerView"
-            android:layout_width="150dp"
+            android:layout_width="match_parent"
             android:layout_height="150dp"
             app:alpha_flag="0.8"
             app:alpha_selector="0.8"
             app:default_color="@color/colorPrimary"
             app:palette="@drawable/palette"
             app:selector="@drawable/wheel" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/primaryColor"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:text="@string/designPrimaryColorDisplayPrimary"
-                android:textSize="14sp" />
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/lightColor"
-                    style="?android:attr/buttonBarButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/designLightColor"
-                    android:textSize="14sp" />
-
-                <Button
-                    android:id="@+id/darkColor"
-                    style="?android:attr/buttonBarButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/designDarkColor"
-                    android:textSize="14sp" />
-            </LinearLayout>
-
-        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/buttonMargin"
         android:layout_marginTop="@dimen/designLayoutMarginTop"
         android:orientation="horizontal">
 
@@ -84,6 +92,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/designPrimaryColorDisplayPrimary"
+            android:textColor="@color/colorPrimary"
             android:textSize="14sp" />
 
         <Button
@@ -93,6 +102,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/designPrimaryColorDisplaySecondary"
+            android:textColor="@color/colorPrimary"
             android:textSize="14sp" />
     </LinearLayout>
 
@@ -101,10 +111,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_margin="@dimen/buttonMargin"
         android:layout_marginTop="@dimen/designButtonMarginTop"
-        android:background="@color/designColorRed"
+        android:background="@color/colorPrimary"
+        android:drawableEnd="@drawable/ic_menu_send_white"
+        android:drawablePadding="@dimen/btn_drawable_padding"
+        android:paddingLeft="@dimen/btn_paddin_left_right"
+        android:paddingRight="@dimen/btn_paddin_left_right"
         android:text="@string/designSaveColorsButton"
-        android:textColor="#fff"
-        android:textSize="14sp" />
+        android:textColor="@color/ic_launcher_background"
+        android:textSize="@dimen/btn_font_size" />
 
 </LinearLayout>
