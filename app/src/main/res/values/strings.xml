@@ -37,7 +37,7 @@
     <string name="leftCurly">{</string>
 
     <!-- DesignFragment Strings -->
-    <string name="designTitle">Pick your Color</string>
+    <string name="designTitle">Pick your Colors</string>
     <string name="designLightColor">Light Color</string>
     <string name="designDarkColor">Dark Color</string>
     <string name="designSaveColorsButton">Elements</string>
@@ -55,6 +55,8 @@
     <string name="elementBody">Body Text</string>
     <string name="elementButtons">Buttons</string>
 
+    <string name="elementButtonViews">Views</string>
+
     <string name="elementFontTitle">Font Family</string>
     <string name="elementRoboto">Roboto</string>
     <string name="elementOpenSans">Open Sans</string>
@@ -68,6 +70,8 @@
     <string name="elementFontWeightRegular">Regular</string>
 
     <string name="elementFontSizeTitle">Font Size</string>
+
+    <string name="elementSaveButton">Save</string>
 
     <!-- LayoutViews Strings -->
     <string name="layoutViewOneTitle">Login</string>

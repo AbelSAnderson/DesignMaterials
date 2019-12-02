@@ -4,6 +4,7 @@ package com.example.designmaterials.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -77,6 +78,13 @@ public class ElementsFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recyclerViewElements);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new ElementRecycleViewAdapter(elements));
+
+        view.findViewById(R.id.viewsButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_nav_elements_to_nav_views);
+            }
+        });
 
         return view;
     }

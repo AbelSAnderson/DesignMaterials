@@ -19,6 +19,7 @@
     <dimen name="elementFontButtonMargin">1dp</dimen>
     <dimen name="elementTitleMarginTop">20dp</dimen>
     <dimen name="buttonMargin">20dp</dimen>
+    <dimen name="buttonMarginMedium">30dp</dimen>
     <dimen name="largeButtonMargin">40dp</dimen>
 
     <!-- Font Size -->
